@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wellness Cafe & Activity — Investor Deck 2568</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f4f9f5;
+  --bg2:#edf5ef;
+  --bg3:#e5f0e7;
+  --panel:#ffffff;
+  --panel2:#f0f7f1;
+  --sage:#3a8c42;
+  --sage2:#2d7235;
+  --sage3:#4aab54;
+  --gold:#9a6e1a;
+  --gold2:#b8820f;
+  --cream:#0f1f11;
+  --cream2:#243d27;
+  --muted:rgba(40,100,50,0.55);
+  --muted2:rgba(40,100,50,0.22);
+  --muted3:rgba(40,100,50,0.07);
+  --border:rgba(58,140,66,0.22);
+  --border2:rgba(58,140,66,0.1);
+  --text:#162419;
+  --text2:#2e4a32;
+  --text3:#4a6e4e;
+  --red:#c0392b;
+  --amber:#c47c0a;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'DM Sans',sans-serif;
+  font-weight:400;
+  line-height:1.65;
+  overflow-x:hidden;
+}
+
+/* ─── SIDEBAR NAV ─── */
+#sidenav{
+  position:fixed;top:50%;left:0;transform:translateY(-50%);
+  z-index:200;
+  padding:0 0 0 20px;
+  display:flex;flex-direction:column;gap:6px;
+}
+.snav-dot{
+  display:flex;align-items:center;gap:10px;cursor:pointer;
+  text-decoration:none;
+}
+.snav-pip{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--muted);
+  transition:all .3s;flex-shrink:0;
+}
+.snav-label{
+  font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text3);white-space:nowrap;
+  opacity:0;transform:translateX(-6px);
+  transition:all .3s;pointer-events:none;
+}
+.snav-dot:hover .snav-label,.snav-dot.active .snav-label{opacity:1;transform:translateX(0)}
+.snav-dot.active .snav-pip{background:var(--sage);width:8px;height:8px}
+.snav-dot:hover .snav-pip{background:var(--sage2)}
+
+/* ─── SECTIONS ─── */
+.section{
+  min-height:100vh;
+  padding:90px 90px 90px 60px;
+  position:relative;
+  display:flex;align-items:center;
+  overflow:hidden;
+}
+.section:nth-child(even){background:var(--bg2)}
+
+.section-inner{
+  max-width:1080px;margin:0 auto;width:100%;
+}
+
+/* ─── HERO ─── */
+#hero{
+  background:var(--bg);
+  padding:0;
+  min-height:100vh;
+}
+.hero-wrap{
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:100vh;
+}
+.hero-left{
+  background:var(--bg3);
+  padding:80px 70px;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero-left::before{
+  content:'';
+  position:absolute;bottom:-80px;left:-80px;
+  width:360px;height:360px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(58,140,66,.1) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-eyebrow{
+  font-size:.68rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--sage);margin-bottom:32px;
+  display:flex;align-items:center;gap:10px;
+}
+.hero-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--sage)}
+.hero-h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3.2rem,5.5vw,5.4rem);
+  font-weight:700;line-height:1.05;
+  color:var(--cream);
+  margin-bottom:8px;
+}
+.hero-h1 em{font-style:italic;color:var(--sage2);font-weight:400}
+.hero-sub{
+  font-size:.95rem;color:var(--text2);
+  margin-bottom:48px;letter-spacing:.02em;
+}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:52px}
+.htag{
+  padding:5px 14px;border:1px solid var(--border);border-radius:100px;
+  font-size:.72rem;font-weight:500;letter-spacing:.08em;
+  color:var(--muted);
+}
+.hero-stat-row{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:var(--border2);
+  border-radius:8px;overflow:hidden;
+  border:1px solid var(--border);
+}
+.hstat{
+  background:var(--panel);
+  padding:20px 22px;
+}
+.hstat-val{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;font-weight:600;
+  color:var(--cream);line-height:1;
+}
+.hstat-val.gold{color:var(--gold2)}
+.hstat-lbl{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-top:5px}
+.hero-right{
+  background:var(--panel);
+  padding:80px 70px;
+  display:flex;flex-direction:column;justify-content:center;
+  border-left:1px solid var(--border);
+  position:relative;
+}
+.botanical{
+  position:absolute;top:30px;right:30px;opacity:.12;
+  pointer-events:none;
+}
+.hero-kpi-list{display:flex;flex-direction:column;gap:20px}
+.hkpi{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 20px;
+  background:var(--panel2);
+  border-radius:8px;
+  border:1px solid var(--border2);
+  transition:border-color .3s;
+}
+.hkpi:hover{border-color:var(--border)}
+.hkpi-left{font-size:.82rem;color:var(--text2)}
+.hkpi-right{
+  font-family:'Playfair Display',serif;
+  font-size:1.35rem;color:var(--cream);font-weight:600;
+}
+.hkpi-right.sage{color:var(--sage2)}
+.hkpi-right.gold{color:var(--gold2)}
+.hero-note{
+  margin-top:32px;font-size:.75rem;color:var(--text3);
+  line-height:1.7;border-top:1px solid var(--border2);padding-top:20px;
+}
+
+/* ─── SECTION HEADER ─── */
+.sec-eyebrow{
+  font-size:.65rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--sage);margin-bottom:10px;
+  display:flex;align-items:center;gap:10px;
+}
+.sec-eyebrow::before{content:'';display:block;width:20px;height:1px;background:var(--sage)}
+.sec-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,3.5vw,2.8rem);
+  font-weight:700;color:var(--cream);
+  margin-bottom:36px;line-height:1.15;
+}
+.sec-title em{font-style:italic;color:var(--sage2);font-weight:400}
+.sec-lead{
+  font-size:1rem;color:var(--text2);
+  max-width:640px;line-height:1.8;margin-bottom:40px;
+}
+
+/* ─── GRID LAYOUTS ─── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.g-asymm{display:grid;grid-template-columns:3fr 2fr;gap:40px;align-items:start}
+.g-asymm2{display:grid;grid-template-columns:2fr 3fr;gap:40px;align-items:start}
+
+/* ─── CARDS ─── */
+.card{
+  background:var(--panel);
+  border:1px solid var(--border2);
+  border-radius:10px;
+  padding:28px;
+  transition:all .3s;
+}
+.card:hover{border-color:var(--border);transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.card-icon{font-size:1.6rem;margin-bottom:16px}
+.card-title{
+  font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--sage);margin-bottom:10px;
+}
+.card-body{font-size:.92rem;color:var(--text2);line-height:1.75}
+.card-price{
+  font-family:'Playfair Display',serif;
+  font-size:1.15rem;color:var(--gold2);margin-top:14px;
+}
+.card.sage-border{border-left:3px solid var(--sage)}
+.card.gold-border{border-left:3px solid var(--gold)}
+
+/* ─── HIGHLIGHT BOX ─── */
+.hbox{
+  background:var(--muted3);
+  border-left:3px solid var(--sage);
+  border-radius:0 8px 8px 0;
+  padding:20px 24px;
+  font-size:.9rem;color:var(--text2);line-height:1.8;
+  margin:20px 0;
+}
+.hbox.gold{border-color:var(--gold)}
+
+/* ─── TABLES ─── */
+.tbl{width:100%;border-collapse:collapse;font-size:.9rem}
+.tbl th{
+  background:var(--panel2);color:var(--sage2);
+  padding:12px 16px;text-align:left;
+  font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  border-bottom:1px solid var(--border);
+}
+.tbl td{
+  padding:12px 16px;border-bottom:1px solid var(--border2);
+  color:var(--text2);
+}
+.tbl tr:hover td{background:var(--muted3)}
+.tbl .total td{background:var(--panel2);color:var(--cream);font-weight:600}
+.tbl .hl td{background:rgba(122,184,126,.1);color:var(--sage2);font-weight:600}
+.tbl .inv td{background:var(--sage);color:#fff;font-weight:600}
+.num{text-align:right}
+.pos{color:var(--sage2);font-weight:500}
+.neg{color:var(--text3)}
+
+/* ─── SWOT ─── */
+.swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.swot-card{border-radius:10px;padding:24px 26px}
+.sw-s{background:rgba(122,184,126,.08);border:1px solid rgba(122,184,126,.25)}
+.sw-w{background:rgba(224,123,107,.06);border:1px solid rgba(224,123,107,.2)}
+.sw-o{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2)}
+.sw-t{background:rgba(120,100,80,.06);border:1px solid rgba(160,140,100,.18)}
+.swot-header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.sw-badge{
+  width:32px;height:32px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:.9rem;flex-shrink:0;
+}
+.b-s{background:var(--sage);color:#fff}
+.b-w{background:var(--red);color:#fff}
+.b-o{background:var(--gold);color:#fff}
+.b-t{background:#8a7d6a;color:#fff}
+.sw-title{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text2)}
+.sw-list{list-style:none;display:flex;flex-direction:column;gap:7px}
+.sw-list li{
+  font-size:.85rem;color:var(--text2);
+  padding-left:14px;position:relative;line-height:1.55;
+}
+.sw-list li::before{content:'–';position:absolute;left:0;color:var(--text3)}
+
+/* ─── TIMELINE ─── */
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:flex;gap:20px}
+.tl-spine{display:flex;flex-direction:column;align-items:center;width:36px;flex-shrink:0}
+.tl-dot{
+  width:10px;height:10px;border-radius:50%;
+  background:var(--sage);margin-top:4px;flex-shrink:0;
+  box-shadow:0 0 0 3px rgba(122,184,126,.2);
+}
+.tl-line{width:1px;flex:1;background:var(--border2);min-height:28px;margin:4px 0}
+.tl-item:last-child .tl-line{display:none}
+.tl-content{padding-bottom:24px;flex:1}
+.tl-month{font-size:.68rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--sage);margin-bottom:3px}
+.tl-title{font-size:.9rem;color:var(--cream);margin-bottom:2px;font-weight:500}
+.tl-title.final{color:var(--gold2)}
+
+/* ─── PERSONA ─── */
+.persona-wrap{
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:12px;padding:32px;
+}
+.persona-top{display:flex;gap:20px;align-items:flex-start;margin-bottom:24px}
+.persona-avatar{
+  width:64px;height:64px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--sage) 0%,var(--bg3) 100%);
+  display:flex;align-items:center;justify-content:center;font-size:1.6rem;
+}
+.persona-name{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--cream);margin-bottom:3px}
+.persona-role{font-size:.8rem;color:var(--text3);letter-spacing:.05em}
+.p-tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.ptag{
+  padding:3px 10px;border-radius:100px;font-size:.72rem;font-weight:500;
+}
+.ptag-red{background:rgba(224,123,107,.15);color:var(--red)}
+.ptag-sage{background:rgba(122,184,126,.12);color:var(--sage2)}
+.ptag-gold{background:rgba(201,168,76,.12);color:var(--gold2)}
+.persona-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.p-sec-title{font-size:.67rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--text3);margin-bottom:8px}
+.p-items{display:flex;flex-direction:column;gap:4px}
+.p-item{font-size:.84rem;color:var(--text2);line-height:1.5}
+
+/* ─── BARS ─── */
+.rev-bars{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.rbar-row{display:flex;align-items:center;gap:12px}
+.rbar-lbl{font-size:.78rem;color:var(--text3);width:120px;flex-shrink:0}
+.rbar-track{flex:1;background:var(--muted3);border-radius:4px;height:26px;overflow:hidden}
+.rbar-fill{
+  height:100%;border-radius:4px;
+  display:flex;align-items:center;padding-left:12px;
+  width:0;
+  animation:barGrow 1.2s cubic-bezier(.4,0,.2,1) forwards;
+}
+@keyframes barGrow{from{width:0}to{width:var(--bar-w)}}
+.rbar-val{font-size:.75rem;font-weight:600;color:#fff;white-space:nowrap}
+.rfill1{background:var(--sage);--bar-w:42%}
+.rfill2{background:#2d7235;--bar-w:57%}
+.rfill3{background:#1f5a27;--bar-w:71%}
+.rfill4{background:var(--gold);--bar-w:86%}
+.rfill5{background:#7a5210;--bar-w:100%}
+
+/* ─── RISK ─── */
+.risk-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.risk-card{background:var(--panel);border:1px solid var(--border2);border-radius:8px;padding:18px 20px}
+.risk-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:8px}
+.risk-title{font-size:.84rem;font-weight:500;color:var(--cream);line-height:1.4}
+.rlevel{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:100px;flex-shrink:0}
+.rl-hi{background:rgba(224,123,107,.18);color:var(--red)}
+.rl-md{background:rgba(212,168,83,.18);color:var(--amber)}
+.rl-lo{background:rgba(122,184,126,.18);color:var(--sage2)}
+.risk-sol{font-size:.8rem;color:var(--text3);line-height:1.6}
+
+/* ─── KPI STRIP ─── */
+.kpi-strip{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--border2);border-radius:10px;overflow:hidden;
+  border:1px solid var(--border);margin:36px 0;
+}
+.kpi-cell{background:var(--panel);padding:26px 22px;text-align:center}
+.kpi-val{
+  font-family:'Playfair Display',serif;
+  font-size:2.2rem;font-weight:600;
+  color:var(--cream);line-height:1;
+}
+.kpi-val.sage{color:var(--sage2)}
+.kpi-val.gold{color:var(--gold2)}
+.kpi-lbl{font-size:.67rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-top:6px}
+
+/* ─── INVESTMENT ─── */
+#invest{background:var(--bg3)}
+.invest-left .invest-point{display:flex;gap:14px;margin-bottom:22px;align-items:flex-start}
+.ipoint-icon{
+  width:34px;height:34px;border-radius:8px;
+  background:rgba(122,184,126,.1);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.9rem;flex-shrink:0;margin-top:2px;
+}
+.ipoint-lbl{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-bottom:3px}
+.ipoint-val{font-size:.92rem;color:var(--text2)}
+.invest-right{
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:12px;padding:36px;
+}
+.inv-bignum{
+  font-family:'Playfair Display',serif;
+  font-size:3.5rem;font-weight:700;color:var(--sage2);line-height:1;
+  margin-bottom:6px;
+}
+.inv-bignote{font-size:.78rem;color:var(--text3);margin-bottom:28px;letter-spacing:.05em}
+.structure-section{margin-bottom:28px}
+.struct-title{font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);margin-bottom:12px}
+.struct-bar{height:8px;border-radius:100px;background:var(--muted3);overflow:hidden;margin-bottom:8px}
+.struct-fill{height:100%;border-radius:100px;display:flex}
+.sf-eq{background:var(--sage2);flex:52}
+.sf-loan{background:var(--gold2);flex:35}
+.sf-wc{background:var(--sage);flex:13}
+.struct-legend{display:flex;flex-wrap:wrap;gap:12px}
+.sl-item{display:flex;align-items:center;gap:6px;font-size:.74rem;color:var(--text3)}
+.sl-dot{width:8px;height:8px;border-radius:50%}
+.inv-returns{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;
+  border-top:1px solid var(--border2);padding-top:24px;margin-top:4px;
+}
+.ir-cell{text-align:center}
+.ir-val{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--sage2)}
+.ir-lbl{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-top:4px}
+.inv-contact{
+  margin-top:24px;padding-top:20px;border-top:1px solid var(--border2);
+  font-size:.78rem;color:var(--text3);line-height:1.8;
+}
+
+/* ─── COMPETITOR ─── */
+.comp-winner{color:var(--sage2);font-weight:600}
+.comp-no{color:var(--text3)}
+
+/* ─── SECTION DIVIDER ─── */
+.s-divider{
+  width:48px;height:2px;background:var(--sage);
+  margin-bottom:32px;border-radius:2px;
+}
+
+/* ─── LIST STYLES ─── */
+ul.dlist{list-style:none;display:flex;flex-direction:column;gap:8px}
+ul.dlist li{
+  font-size:.92rem;color:var(--text2);
+  padding-left:18px;position:relative;line-height:1.6;
+}
+ul.dlist li::before{
+  content:'◆';position:absolute;left:0;
+  font-size:.4rem;color:var(--sage);top:7px;
+}
+ol.nlist{padding-left:20px;display:flex;flex-direction:column;gap:8px}
+ol.nlist li{font-size:.88rem;color:var(--text2);line-height:1.6}
+
+/* ─── STEP CIRCLES ─── */
+.steps{display:flex;flex-direction:column;gap:8px}
+.step-item{display:flex;gap:12px;align-items:flex-start}
+.step-num{
+  width:24px;height:24px;border-radius:50%;
+  background:var(--sage);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.68rem;font-weight:700;flex-shrink:0;margin-top:2px;
+}
+.step-txt{font-size:.9rem;color:var(--text2);line-height:1.6}
+
+/* ─── BADGE PILL ─── */
+.badge{
+  display:inline-block;
+  padding:3px 12px;border-radius:100px;
+  font-size:.67rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+}
+.badge-sage{background:rgba(122,184,126,.12);color:var(--sage2);border:1px solid rgba(122,184,126,.25)}
+.badge-gold{background:rgba(201,168,76,.1);color:var(--gold2);border:1px solid rgba(201,168,76,.2)}
+
+/* ─── FOOTER ─── */
+footer{
+  background:var(--bg);border-top:1px solid var(--border2);
+  padding:40px 90px;
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:.75rem;color:var(--text3);letter-spacing:.05em;
+}
+footer strong{color:var(--sage2)}
+
+/* ─── SCROLL ANIMATE ─── */
+.fade-up{opacity:1;transform:translateY(0)}
+
+
+@media(max-width:900px){
+  .section{padding:80px 24px 70px 36px}
+  .hero-wrap{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .g2,.g3,.g4,.swot-grid,.risk-grid,.persona-grid,.inv-returns,.g-asymm,.g-asymm2{grid-template-columns:1fr}
+  .kpi-strip{grid-template-columns:1fr 1fr}
+  #sidenav{display:none}
+  footer{flex-direction:column;gap:12px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- SIDE NAV -->
+<nav id="sidenav">
+  <a class="snav-dot" href="#hero" data-sec="hero"><div class="snav-pip"></div><span class="snav-label">Cover</span></a>
+  <a class="snav-dot" href="#overview" data-sec="overview"><div class="snav-pip"></div><span class="snav-label">Overview</span></a>
+  <a class="snav-dot" href="#services" data-sec="services"><div class="snav-pip"></div><span class="snav-label">Services</span></a>
+  <a class="snav-dot" href="#market" data-sec="market"><div class="snav-pip"></div><span class="snav-label">Market</span></a>
+  <a class="snav-dot" href="#management" data-sec="management"><div class="snav-pip"></div><span class="snav-label">Management</span></a>
+  <a class="snav-dot" href="#marketing" data-sec="marketing"><div class="snav-pip"></div><span class="snav-label">Marketing</span></a>
+  <a class="snav-dot" href="#ops" data-sec="ops"><div class="snav-pip"></div><span class="snav-label">Operations</span></a>
+  <a class="snav-dot" href="#financials" data-sec="financials"><div class="snav-pip"></div><span class="snav-label">Financials</span></a>
+  <a class="snav-dot" href="#risk" data-sec="risk"><div class="snav-pip"></div><span class="snav-label">Risk</span></a>
+  <a class="snav-dot" href="#invest" data-sec="invest"><div class="snav-pip"></div><span class="snav-label">Invest</span></a>
+</nav>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="section" id="hero" style="min-height:100vh;padding:0;display:block">
+  <div class="hero-wrap">
+    <!-- LEFT -->
+    <div class="hero-left">
+      <div class="hero-eyebrow">Business Plan · ปีการศึกษา 2568</div>
+      <h1 class="hero-h1">Wellness<br><em>Cafe &</em><br>Activity</h1>
+      <p class="hero-sub">"Your Urban Wellness Sanctuary"<br>กรุงเทพมหานคร · ใกล้ BTS & สวนสาธารณะ</p>
+      <div class="hero-tags">
+        <span class="htag">Health &amp; Wellness</span>
+        <span class="htag">F&amp;B + Activity</span>
+        <span class="htag">B2B Corporate</span>
+        <span class="htag">กลุ่ม พูดแล้วไม่ทำ+</span>
+      </div>
+      <div class="hero-stat-row">
+        <div class="hstat">
+          <div class="hstat-val">3.5M</div>
+          <div class="hstat-lbl">เงินลงทุน (฿)</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-val gold">~32%</div>
+          <div class="hstat-lbl">IRR</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-val">11</div>
+          <div class="hstat-lbl">เดือนถึง Break-even</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-val gold">15.3M</div>
+          <div class="hstat-lbl">รายได้ปีที่ 5 (฿)</div>
+        </div>
+      </div>
+    </div>
+    <!-- RIGHT -->
+    <div class="hero-right">
+      <svg class="botanical" width="240" height="240" viewBox="0 0 240 240" fill="none">
+        <ellipse cx="120" cy="120" rx="90" ry="40" stroke="#7ab87e" stroke-width="1" opacity=".6" transform="rotate(30 120 120)"/>
+        <ellipse cx="120" cy="120" rx="90" ry="40" stroke="#7ab87e" stroke-width="1" opacity=".5" transform="rotate(90 120 120)"/>
+        <ellipse cx="120" cy="120" rx="90" ry="40" stroke="#7ab87e" stroke-width="1" opacity=".4" transform="rotate(150 120 120)"/>
+        <circle cx="120" cy="120" r="6" fill="#7ab87e" opacity=".7"/>
+        <circle cx="120" cy="120" r="18" stroke="#7ab87e" stroke-width="1" opacity=".3"/>
+      </svg>
+      <div style="margin-bottom:12px"><span class="badge badge-sage">Investor Deck</span></div>
+      <p style="font-size:.82rem;color:var(--text3);margin-bottom:22px;line-height:1.8">นำเสนอต่อ: คณะกรรมการตัดสิน / นักลงทุน<br>เพื่อขอรับการสนับสนุนเงินลงทุน 1,235,000 บาท</p>
+
+      <!-- Year 1 block -->
+      <div style="margin-bottom:6px;font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text3)">ปีที่ 1 — ผลลัพธ์เริ่มต้น</div>
+      <div class="hero-kpi-list" style="margin-bottom:6px">
+        <div class="hkpi"><span class="hkpi-left">รายได้ปีที่ 1</span><span class="hkpi-right sage">6,440,000 ฿</span></div>
+        <div class="hkpi">
+          <span class="hkpi-left" style="display:flex;flex-direction:column;gap:2px">
+            <span>กำไรสุทธิปีที่ 1</span>
+            <span style="font-size:.68rem;color:var(--text3);font-weight:400">ต่ำเพราะแบก Fixed Cost เต็มตัวในปีแรก</span>
+          </span>
+          <span class="hkpi-right sage">96,800 ฿</span>
+        </div>
+      </div>
+
+      <!-- Trajectory mini chart -->
+      <div style="background:var(--muted3);border-radius:8px;padding:12px 16px;margin-bottom:6px;border:1px solid var(--border2)">
+        <div style="font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:10px">Net Margin Trajectory — Operating Leverage ทำงาน</div>
+        <div style="display:flex;align-items:flex-end;gap:8px;height:52px">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1">
+            <div style="background:var(--sage);border-radius:3px 3px 0 0;width:100%;height:3px;position:relative">
+              <span style="position:absolute;bottom:6px;left:50%;transform:translateX(-50%);font-size:.65rem;font-weight:700;color:var(--sage);white-space:nowrap">1.5%</span>
+            </div>
+            <span style="font-size:.6rem;color:var(--text3)">ปี 1</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1">
+            <div style="background:var(--sage);border-radius:3px 3px 0 0;width:100%;height:18px;position:relative">
+              <span style="position:absolute;bottom:4px;left:50%;transform:translateX(-50%);font-size:.65rem;font-weight:700;color:#fff;white-space:nowrap">11.9%</span>
+            </div>
+            <span style="font-size:.6rem;color:var(--text3)">ปี 2</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1">
+            <div style="background:var(--sage2);border-radius:3px 3px 0 0;width:100%;height:30px;position:relative">
+              <span style="position:absolute;bottom:4px;left:50%;transform:translateX(-50%);font-size:.65rem;font-weight:700;color:#fff;white-space:nowrap">17.8%</span>
+            </div>
+            <span style="font-size:.6rem;color:var(--text3)">ปี 3</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1">
+            <div style="background:var(--sage2);border-radius:3px 3px 0 0;width:100%;height:40px;position:relative">
+              <span style="position:absolute;bottom:4px;left:50%;transform:translateX(-50%);font-size:.65rem;font-weight:700;color:#fff;white-space:nowrap">21.6%</span>
+            </div>
+            <span style="font-size:.6rem;color:var(--text3)">ปี 4</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1">
+            <div style="background:var(--gold2);border-radius:3px 3px 0 0;width:100%;height:52px;position:relative">
+              <span style="position:absolute;bottom:4px;left:50%;transform:translateX(-50%);font-size:.65rem;font-weight:700;color:#fff;white-space:nowrap">25.0%</span>
+            </div>
+            <span style="font-size:.6rem;color:var(--text3)">ปี 5</span>
+          </div>
+        </div>
+        <div style="margin-top:8px;font-size:.68rem;color:var(--text3);line-height:1.5">
+          💡 Fixed Cost (~4.15M฿/ปี) ค่อนข้างคงที่ในสาขาเดิม ขณะที่รายได้โตจาก 6.4M → 15.3M฿ · <em>ประมาณการสาขาเดียว</em>
+        </div>
+      </div>
+
+      <!-- Year 5 block -->
+      <div style="margin-bottom:6px;font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text3)">ปีที่ 5 — ศักยภาพเต็มรูปแบบ</div>
+      <div class="hero-kpi-list">
+        <div class="hkpi"><span class="hkpi-left">Gross Margin ปีที่ 5</span><span class="hkpi-right gold">74%</span></div>
+        <div class="hkpi">
+          <span class="hkpi-left" style="display:flex;flex-direction:column;gap:2px">
+            <span>Net Margin ปีที่ 5</span>
+            <span style="font-size:.68rem;color:var(--text3);font-weight:400">หลังหักดอกเบี้ย+ภาษีครบแล้ว</span>
+          </span>
+          <span class="hkpi-right gold">25.0%</span>
+        </div>
+        <div class="hkpi">
+          <span class="hkpi-left" style="display:flex;flex-direction:column;gap:2px">
+            <span>ROE ปีที่ 5</span>
+            <span style="font-size:.68rem;color:var(--text3);font-weight:400">Equity ลดลงตามการชำระหนี้</span>
+          </span>
+          <span class="hkpi-right gold">209%</span>
+        </div>
+        <div class="hkpi"><span class="hkpi-left">Payback Period</span><span class="hkpi-right">~3 ปี</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     1. OVERVIEW / EXECUTIVE SUMMARY
+══════════════════════════════════════ -->
+<section class="section" id="overview">
+  <div class="section-inner">
+    <div class="sec-eyebrow">01 · Executive Summary</div>
+    <h2 class="sec-title">บทสรุปผู้บริหาร &amp; <em>ความเป็นมา</em></h2>
+    <div class="s-divider"></div>
+
+    <div class="g-asymm fade-up">
+      <div>
+        <!-- Problem/Solution block -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px">
+          <div style="padding:18px;background:rgba(192,57,43,.04);border:1px solid rgba(192,57,43,.14);border-radius:10px">
+            <div style="font-size:.67rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:8px">😩 ปัญหาที่พบ</div>
+            <div style="font-size:.84rem;color:var(--text2);line-height:1.7">คนทำงานในเมืองเครียดสะสม ไม่มีเวลา ขาดพื้นที่ดูแลทั้งกายและจิต ได้ในที่เดียวโดยไม่ต้องเดินทางไกล</div>
+          </div>
+          <div style="padding:18px;background:rgba(58,140,66,.05);border:1px solid rgba(58,140,66,.18);border-radius:10px">
+            <div style="font-size:.67rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:8px">💚 สิ่งที่เราทำ</div>
+            <div style="font-size:.84rem;color:var(--text2);line-height:1.7">One-stop Wellness รวม F&amp;B + คลาสกิจกรรม ใกล้ BTS สะดวก ครบ เข้าถึงได้ทุกวัน</div>
+          </div>
+        </div>
+
+        <p class="sec-lead">Wellness Cafe &amp; Activity คือธุรกิจที่<strong style="color:var(--cream)"> ผสมผสานร้านอาหารเพื่อสุขภาพ</strong>เข้ากับ<strong style="color:var(--cream)"> พื้นที่กิจกรรม Wellness</strong> ด้านสุขภาพกายและจิตใจภายใต้หลังคาเดียวกัน ตั้งอยู่ใกล้สวนสาธารณะและสถานีรถไฟฟ้า กรุงเทพมหานคร</p>
+
+        <div style="margin-bottom:10px"><span class="badge badge-gold">วัตถุประสงค์การนำเสนอ</span></div>
+        <ol class="nlist">
+          <li>นำเสนอแนวคิดธุรกิจที่มีความแตกต่างชัดเจนในตลาด</li>
+          <li>แสดงความเป็นไปได้ทางการเงินและโอกาสในการลงทุน</li>
+          <li>ขอรับการสนับสนุนเงินลงทุน 3,500,000 บาท</li>
+          <li>สร้างความมั่นใจด้านความยั่งยืนของธุรกิจระยะยาว</li>
+          <li>นำเสนอแผนบริหารความเสี่ยงและกลยุทธ์การเติบโต</li>
+        </ol>
+      </div>
+      <div>
+        <div style="margin-bottom:10px"><span class="badge badge-sage">ตัวชี้วัดสำคัญ</span></div>
+        <table class="tbl">
+          <thead><tr><th>ตัวชี้วัด</th><th>ค่า</th></tr></thead>
+          <tbody>
+            <tr><td>เงินลงทุนเริ่มต้น</td><td class="num pos">3,500,000 ฿</td></tr>
+            <tr><td>รายได้ปีที่ 1</td><td class="num pos">6,440,000 ฿</td></tr>
+            <tr><td>รายได้ปีที่ 5</td><td class="num pos">15,300,000 ฿</td></tr>
+            <tr><td>กำไรสุทธิปีที่ 1</td><td class="num pos">96,800 ฿</td></tr>
+            <tr><td>กำไรสุทธิปีที่ 5</td><td class="num pos">3,823,200 ฿</td></tr>
+            <tr><td>Gross Margin ปีที่ 1</td><td class="num">68%</td></tr>
+            <tr><td>IRR</td><td class="num pos">~32%</td></tr>
+            <tr><td>Break-even</td><td class="num">เดือนที่ 11</td></tr>
+            <tr class="total"><td>Payback Period</td><td class="num">~3 ปี</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     2. SERVICES
+══════════════════════════════════════ -->
+<section class="section" id="services">
+  <div class="section-inner">
+    <div class="sec-eyebrow">02 · Services</div>
+    <h2 class="sec-title">บริการและผลิตภัณฑ์ <em>3 กลุ่มหลัก</em></h2>
+    <div class="s-divider"></div>
+
+    <!-- 3 service pillars with revenue share -->
+    <div class="g3 fade-up" style="margin-bottom:44px">
+      <div class="card sage-border">
+        <div class="card-icon">🥤</div>
+        <div class="card-title">Food &amp; Beverage</div>
+        <div class="card-body">
+          <strong style="color:var(--cream)">เครื่องดื่มสุขภาพ</strong><br>
+          Cold-pressed juice · Smoothie · Herbal drinks · Functional coffee<br><br>
+          <strong style="color:var(--cream)">อาหารเพื่อสุขภาพ</strong><br>
+          ออกแบบโดยนักโภชนาการ · Plant-based · Clean eating
+        </div>
+        <div class="card-price">฿120 – 350 / รายการ</div>
+        <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border2)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <span style="font-size:.68rem;color:var(--text3);letter-spacing:.1em;text-transform:uppercase">สัดส่วนรายได้ปีที่ 1</span>
+            <span style="font-size:.9rem;font-weight:700;color:var(--sage)">54%</span>
+          </div>
+          <div style="height:6px;background:var(--muted3);border-radius:3px;overflow:hidden">
+            <div style="width:54%;height:100%;background:var(--sage);border-radius:3px"></div>
+          </div>
+          <div style="font-size:.72rem;color:var(--text3);margin-top:6px">3,500,000 ฿/ปี · 40 ที่นั่ง · 07:00–21:00</div>
+        </div>
+      </div>
+      <div class="card sage-border">
+        <div class="card-icon">🧘</div>
+        <div class="card-title">Wellness Activities</div>
+        <div class="card-body">
+          <strong style="color:var(--cream)">Daily Class (เช้า &amp; เย็น)</strong><br>
+          โยคะ · Mindfulness · Stretching · Meditation<br>
+          สูงสุด 15 คน/รอบ · 2 รอบ/วัน<br><br>
+          <strong style="color:var(--cream)">Weekend Workshop</strong><br>
+          โภชนาการ · ความเครียด · Sleep hygiene
+        </div>
+        <div class="card-price">฿300 – 600 / คลาส</div>
+        <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border2)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <span style="font-size:.68rem;color:var(--text3);letter-spacing:.1em;text-transform:uppercase">สัดส่วนรายได้ปีที่ 1</span>
+            <span style="font-size:.9rem;font-weight:700;color:var(--sage2)">31%</span>
+          </div>
+          <div style="height:6px;background:var(--muted3);border-radius:3px;overflow:hidden">
+            <div style="width:31%;height:100%;background:var(--sage2);border-radius:3px"></div>
+          </div>
+          <div style="font-size:.72rem;color:var(--text3);margin-top:6px">2,000,000 ฿/ปี · 07:00–08:00 &amp; 18:30–20:00</div>
+        </div>
+      </div>
+      <div class="card gold-border">
+        <div class="card-icon">🏢</div>
+        <div class="card-title">Corporate Wellness</div>
+        <div class="card-body">
+          <strong style="color:var(--cream)">Monthly Package (B2B)</strong><br>
+          Employee Wellness Program · Team Building<br>สัญญารายปี รายได้ประจำ<br><br>
+          <strong style="color:var(--cream)">Event Space Rental</strong><br>
+          จัดกิจกรรมองค์กร พร้อม Wellness Catering
+        </div>
+        <div class="card-price" style="color:var(--gold2)">฿15,000 – 50,000 / Package</div>
+        <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border2)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <span style="font-size:.68rem;color:var(--text3);letter-spacing:.1em;text-transform:uppercase">สัดส่วนรายได้ปีที่ 1</span>
+            <span style="font-size:.9rem;font-weight:700;color:var(--gold2)">15%</span>
+          </div>
+          <div style="height:6px;background:var(--muted3);border-radius:3px;overflow:hidden">
+            <div style="width:15%;height:100%;background:var(--gold2);border-radius:3px"></div>
+          </div>
+          <div style="font-size:.72rem;color:var(--text3);margin-top:6px">940,000 ฿/ปี · เป้า 5+ องค์กร ปีที่ 1</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Customer Day Journey + Pricing Tiers -->
+    <div class="g2 fade-up">
+      <!-- LEFT: customer day in the life -->
+      <div>
+        <div style="margin-bottom:16px"><span class="badge badge-sage">วันหนึ่งของลูกค้า — Customer Day Journey</span></div>
+        <div style="position:relative;padding-left:28px">
+          <!-- vertical line -->
+          <div style="position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--sage),var(--sage2),var(--gold));border-radius:2px"></div>
+
+          <div style="position:relative;margin-bottom:22px">
+            <div style="position:absolute;left:-28px;top:2px;width:20px;height:20px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center">
+              <span style="font-size:.55rem;color:#fff;font-weight:700">07</span>
+            </div>
+            <div style="background:var(--panel);border:1px solid var(--border2);border-radius:8px;padding:14px 16px">
+              <div style="font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin-bottom:4px">Morning Ritual</div>
+              <div style="font-size:.85rem;color:var(--cream);font-weight:500">Yoga / Stretching Class 60 นาที</div>
+              <div style="font-size:.78rem;color:var(--text3);margin-top:3px">ก่อนไปทำงาน · ผ่อนคลายร่างกาย + จิตใจ</div>
+            </div>
+          </div>
+
+          <div style="position:relative;margin-bottom:22px">
+            <div style="position:absolute;left:-28px;top:2px;width:20px;height:20px;border-radius:50%;background:var(--sage2);display:flex;align-items:center;justify-content:center">
+              <span style="font-size:.55rem;color:#fff;font-weight:700">08</span>
+            </div>
+            <div style="background:var(--panel);border:1px solid var(--border2);border-radius:8px;padding:14px 16px">
+              <div style="font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sage2);margin-bottom:4px">Healthy Breakfast</div>
+              <div style="font-size:.85rem;color:var(--cream);font-weight:500">Signature Breakfast Set หลังคลาส</div>
+              <div style="font-size:.78rem;color:var(--text3);margin-top:3px">Cold-pressed juice + อาหารเพื่อสุขภาพ ออกแบบโดยนักโภชนาการ</div>
+            </div>
+          </div>
+
+          <div style="position:relative;margin-bottom:22px">
+            <div style="position:absolute;left:-28px;top:2px;width:20px;height:20px;border-radius:50%;background:#5a9e62;display:flex;align-items:center;justify-content:center">
+              <span style="font-size:.55rem;color:#fff;font-weight:700">12</span>
+            </div>
+            <div style="background:var(--panel);border:1px solid var(--border2);border-radius:8px;padding:14px 16px">
+              <div style="font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#5a9e62;margin-bottom:4px">Lunch &amp; Co-work</div>
+              <div style="font-size:.85rem;color:var(--cream);font-weight:500">Clean lunch + นั่งทำงานในบรรยากาศ Wellness</div>
+              <div style="font-size:.78rem;color:var(--text3);margin-top:3px">Wi-Fi · Loyalty Points สะสม · Ambience ผ่อนคลาย</div>
+            </div>
+          </div>
+
+          <div style="position:relative;margin-bottom:22px">
+            <div style="position:absolute;left:-28px;top:2px;width:20px;height:20px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center">
+              <span style="font-size:.55rem;color:#fff;font-weight:700">18</span>
+            </div>
+            <div style="background:var(--panel);border:1px solid rgba(184,130,15,.25);border-radius:8px;padding:14px 16px">
+              <div style="font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin-bottom:4px">After-Work Session</div>
+              <div style="font-size:.85rem;color:var(--cream);font-weight:500">Mindfulness / Evening Stretch หลังเลิกงาน</div>
+              <div style="font-size:.78rem;color:var(--text3);margin-top:3px">คลายเครียด · ต่อเนื่องจนถึง 20:00 น.</div>
+            </div>
+          </div>
+
+          <div style="position:relative">
+            <div style="position:absolute;left:-28px;top:2px;width:20px;height:20px;border-radius:50%;background:var(--gold2);display:flex;align-items:center;justify-content:center">
+              <span style="font-size:.7rem">♻</span>
+            </div>
+            <div style="background:linear-gradient(135deg,rgba(58,140,66,.06),rgba(184,130,15,.04));border:1px solid var(--border);border-radius:8px;padding:14px 16px">
+              <div style="font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin-bottom:4px">Loyalty Loop</div>
+              <div style="font-size:.85rem;color:var(--cream);font-weight:500">สะสมแต้ม → แลกคลาสฟรี → บอกต่อ</div>
+              <div style="font-size:.78rem;color:var(--text3);margin-top:3px">เป้าหมาย Repeat Rate 40%+ ภายในเดือนที่ 6</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: pricing tiers + future roadmap -->
+      <div>
+        <div style="margin-bottom:16px"><span class="badge badge-gold">Pricing Tiers — ตัวเลือกสำหรับลูกค้าทุกกลุ่ม</span></div>
+
+        <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px">
+          <!-- Walk-in -->
+          <div style="background:var(--panel);border:1px solid var(--border2);border-radius:10px;padding:18px 20px">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+              <div>
+                <div style="font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:4px">Walk-in</div>
+                <div style="font-size:.88rem;color:var(--cream);font-weight:500">คลาสเดี่ยว + เมนูตามสั่ง</div>
+                <div style="font-size:.76rem;color:var(--text3);margin-top:3px">ไม่ต้องสมัครสมาชิก · ยืดหยุ่นเต็มที่</div>
+              </div>
+              <div style="text-align:right;flex-shrink:0">
+                <div style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--text2);font-weight:600;line-height:1">฿300+</div>
+                <div style="font-size:.68rem;color:var(--text3)">/ครั้ง</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Monthly Member -->
+          <div style="background:var(--panel);border:2px solid var(--sage);border-radius:10px;padding:18px 20px;position:relative">
+            <div style="position:absolute;top:-11px;left:16px;background:var(--sage);color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:100px">ยอดนิยม</div>
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+              <div>
+                <div style="font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:4px">Monthly Member</div>
+                <div style="font-size:.88rem;color:var(--cream);font-weight:500">คลาส 8 ครั้ง/เดือน + ส่วนลด F&amp;B 10%</div>
+                <div style="font-size:.76rem;color:var(--text3);margin-top:3px">LINE OA จองล่วงหน้า · สะสม Loyalty Points</div>
+              </div>
+              <div style="text-align:right;flex-shrink:0">
+                <div style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--sage);font-weight:600;line-height:1">฿1,890</div>
+                <div style="font-size:.68rem;color:var(--text3)">/เดือน</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Corporate Package -->
+          <div style="background:linear-gradient(135deg,rgba(184,130,15,.04),rgba(154,110,26,.02));border:1px solid rgba(184,130,15,.3);border-radius:10px;padding:18px 20px">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+              <div>
+                <div style="font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);margin-bottom:4px">Corporate Package</div>
+                <div style="font-size:.88rem;color:var(--cream);font-weight:500">Employee Wellness Program รายเดือน</div>
+                <div style="font-size:.76rem;color:var(--text3);margin-top:3px">สัญญาต่อเนื่อง · Customizable สำหรับแต่ละองค์กร</div>
+              </div>
+              <div style="text-align:right;flex-shrink:0">
+                <div style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--gold2);font-weight:600;line-height:1">฿15K+</div>
+                <div style="font-size:.68rem;color:var(--text3)">/เดือน/กลุ่ม</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:12px"><span class="badge badge-sage">Roadmap การขยายบริการ</span></div>
+        <ul class="dlist">
+          <li><strong style="color:var(--cream)">ปีที่ 2:</strong> Online Wellness Shop — ชาสมุนไพร, คอลลาเจน, Supplement</li>
+          <li><strong style="color:var(--cream)">ปีที่ 3:</strong> LINE OA + App จองคลาส + Loyalty Program ดิจิทัล</li>
+          <li><strong style="color:var(--cream)">ปีที่ 4:</strong> Online Wellness Course — Digital Content สร้าง Passive Income</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     3. MARKET ANALYSIS
+══════════════════════════════════════ -->
+<section class="section" id="market">
+  <div class="section-inner">
+    <div class="sec-eyebrow">03 · Market Analysis</div>
+    <h2 class="sec-title">การวิเคราะห์ตลาด <em>&amp; คู่แข่ง</em></h2>
+    <div class="s-divider"></div>
+
+    <div class="kpi-strip fade-up">
+      <div class="kpi-cell"><div class="kpi-val gold">$7.9T</div><div class="kpi-lbl">ตลาด Wellness โลก 2026</div></div>
+      <div class="kpi-cell"><div class="kpi-val sage">300B ฿</div><div class="kpi-lbl">ตลาด F&amp;B ไทย 2569</div></div>
+      <div class="kpi-cell"><div class="kpi-val sage">1T ฿</div><div class="kpi-lbl">ตลาด Wellness ไทย 2024</div></div>
+      <div class="kpi-cell"><div class="kpi-val">4-5%</div><div class="kpi-lbl">การเติบโต F&amp;B ต่อปี</div></div>
+    </div>
+
+    <div class="g2 fade-up">
+
+      <!-- LEFT: customer groups table -->
+      <div>
+        <div style="margin-bottom:16px"><span class="badge badge-sage">กลุ่มลูกค้าเป้าหมาย</span></div>
+        <table class="tbl">
+          <thead><tr><th>กลุ่ม</th><th>ลักษณะ</th><th>ศักยภาพ</th></tr></thead>
+          <tbody>
+            <tr><td><strong style="color:var(--cream)">Primary</strong><br><span style="font-size:.75rem;color:var(--text3)">คนทำงานเมือง</span></td><td style="font-size:.8rem">อายุ 25-45 ปี<br>รายได้ 30K+ ฿/เดือน</td><td style="text-align:center;color:var(--sage2)">⭐⭐⭐⭐⭐</td></tr>
+            <tr><td><strong style="color:var(--cream)">Secondary</strong><br><span style="font-size:.75rem;color:var(--text3)">ผู้รักสุขภาพ</span></td><td style="font-size:.8rem">ทุกช่วงวัย<br>ออกกำลังกายสม่ำเสมอ</td><td style="text-align:center;color:var(--sage2)">⭐⭐⭐⭐</td></tr>
+            <tr><td><strong style="color:var(--cream)">Tertiary</strong><br><span style="font-size:.75rem;color:var(--text3)">Active Aging</span></td><td style="font-size:.8rem">อายุ 55+ ปี<br>ต้องการสังคม+กิจกรรม</td><td style="text-align:center;color:var(--sage)">⭐⭐⭐</td></tr>
+            <tr class="hl"><td><strong>B2B องค์กร</strong></td><td style="font-size:.8rem">Corporate Wellness<br>HR Priority</td><td style="text-align:center">⭐⭐⭐⭐⭐</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- RIGHT: market trends + break-even explainer -->
+      <div>
+        <div style="margin-bottom:12px"><span class="badge badge-gold">แนวโน้มตลาด</span></div>
+        <ul class="dlist" style="margin-bottom:28px">
+          <li>Holistic Wellness ดูแลกาย-จิตพร้อมกันกำลังมาแรง</li>
+          <li>Corporate Wellness Program กลาย Priority ของ HR</li>
+          <li>Gen Y/Z ให้ความสำคัญกับ Work-Life Balance</li>
+          <li>Social Media ช่วยสร้างแบรนด์ Wellness ได้รวดเร็ว</li>
+          <li>ไทยเป็น Wellness Tourism Destination ระดับโลก</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- Persona full-width -->
+    <div style="margin-top:36px">
+        <div style="margin-bottom:16px"><span class="badge badge-sage">Customer Persona — Persona 1</span></div>
+
+        <!-- Persona Card -->
+        <div class="persona-wrap">
+          <div class="persona-top">
+            <div class="persona-avatar">👩‍💼</div>
+            <div style="flex:1">
+              <div class="persona-name">เมย์ (May)</div>
+              <div class="persona-role">Marketing · อายุ 30 · รายได้ 50,000 ฿/เดือน · คอนโดใกล้รถไฟฟ้า · ปริญญาโท</div>
+              <div class="p-tags" style="margin-top:8px">
+                <span class="ptag ptag-red">เครียดสะสม</span>
+                <span class="ptag ptag-red">ปวดคอ-บ่า-ไหล่</span>
+                <span class="ptag ptag-red">นอนไม่หลับ</span>
+                <span class="ptag ptag-sage">สนใจ Wellness</span>
+                <span class="ptag ptag-gold">ใกล้ BTS</span>
+                <span class="ptag ptag-gold">ไม่มีลูก ยังไม่แต่งงาน</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4-quadrant grid -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:0">
+
+            <!-- พฤติกรรม -->
+            <div style="background:var(--muted3);border-radius:8px;padding:14px 16px">
+              <div class="p-sec-title" style="margin-bottom:8px">🧠 พฤติกรรมและไลฟ์สไตล์</div>
+              <div class="p-items">
+                <div class="p-item">— ทำงาน 8–10 ชม./วัน หน้าจอคอมตลอด</div>
+                <div class="p-item">— ดื่มกาแฟวันละ 1–3 แก้ว</div>
+                <div class="p-item">— ใช้ YouTube · TikTok · IG ติดตามคอนเทนต์สุขภาพ</div>
+                <div class="p-item">— ชอบไปคาเฟ่เปลี่ยนบรรยากาศ</div>
+                <div class="p-item">— สนใจ Wellness แต่ยังไม่มีวินัยสม่ำเสมอ</div>
+              </div>
+            </div>
+
+            <!-- Pain Points -->
+            <div style="background:rgba(192,57,43,.04);border:1px solid rgba(192,57,43,.12);border-radius:8px;padding:14px 16px">
+              <div class="p-sec-title" style="margin-bottom:8px;color:var(--red)">😩 Pain Points</div>
+              <div class="p-items">
+                <div class="p-item">— ความเครียดสะสม ปวดคอ บ่า ไหล่ นอนไม่ลึก</div>
+                <div class="p-item">— ไม่มีเวลาเป็นกิจจะลักษณะ เลิกงานเหนื่อยมาก</div>
+                <div class="p-item">— วันหยุดอยากพักมากกว่าขยับตัว</div>
+                <div class="p-item">— คาเฟ่ทั่วไปไม่เหมาะกับคนดูแลสุขภาพ</div>
+                <div class="p-item">— ภาระงานทำให้ไม่มีเวลาเข้าฟิตเนส</div>
+              </div>
+            </div>
+
+            <!-- ปัจจัยตัดสินใจ -->
+            <div style="background:rgba(58,140,66,.05);border:1px solid rgba(58,140,66,.15);border-radius:8px;padding:14px 16px">
+              <div class="p-sec-title" style="margin-bottom:8px">✅ ปัจจัยที่มีผลต่อการตัดสินใจ</div>
+              <div class="p-items">
+                <div class="p-item">— สถานที่เดินทางสะดวก ใกล้รถไฟฟ้า</div>
+                <div class="p-item">— ราคาไม่สูงเกินไปเมื่อเทียบกับรายได้</div>
+                <div class="p-item">— บรรยากาศสงบ ไม่กดดัน</div>
+                <div class="p-item">— มีคลาสสั้นๆ หลังเลิกงาน (30–60 นาที)</div>
+              </div>
+            </div>
+
+            <!-- Goals -->
+            <div style="background:rgba(184,130,15,.05);border:1px solid rgba(184,130,15,.15);border-radius:8px;padding:14px 16px">
+              <div class="p-sec-title" style="margin-bottom:8px;color:var(--gold2)">🎯 Goals</div>
+              <div style="font-size:.72rem;font-weight:600;color:var(--text3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px">ระยะสั้น (1–3 เดือน)</div>
+              <div class="p-items" style="margin-bottom:8px">
+                <div class="p-item">— ลดความเครียด นอนหลับดีขึ้น</div>
+                <div class="p-item">— มีกิจกรรมดูแลตัวเองสัปดาห์ละ 1–2 ครั้ง</div>
+              </div>
+              <div style="font-size:.72rem;font-weight:600;color:var(--text3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px">ระยะกลาง (6–12 เดือน)</div>
+              <div class="p-items" style="margin-bottom:8px">
+                <div class="p-item">— มี Routine สุขภาพที่ทำได้จริง</div>
+                <div class="p-item">— รู้สึกว่าชีวิตมีสมดุลมากขึ้น</div>
+              </div>
+              <div style="font-size:.72rem;font-weight:600;color:var(--text3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px">ระยะยาว (1–3 ปี)</div>
+              <div class="p-items">
+                <div class="p-item">— Work-life balance ที่มั่นคง</div>
+                <div class="p-item">— เป็นคนที่ "ดูดีและมีพลัง" ในสายตาตัวเอง</div>
+              </div>
+            </div>
+
+            <!-- Social Media row — full width spanning bottom -->
+            <div style="grid-column:1/-1;background:rgba(58,140,66,.04);border:1px solid rgba(58,140,66,.14);border-radius:8px;padding:14px 16px;display:flex;align-items:flex-start;gap:24px;flex-wrap:wrap">
+              <div style="flex-shrink:0">
+                <div class="p-sec-title" style="margin-bottom:6px">📱 Social & ช่องทางที่ติดตาม</div>
+                <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+                  <span style="background:var(--muted3);border:1px solid var(--border);border-radius:100px;padding:3px 10px;font-size:.72rem;color:var(--text2)">YouTube</span>
+                  <span style="background:var(--muted3);border:1px solid var(--border);border-radius:100px;padding:3px 10px;font-size:.72rem;color:var(--text2)">TikTok</span>
+                  <span style="background:var(--muted3);border:1px solid var(--border);border-radius:100px;padding:3px 10px;font-size:.72rem;color:var(--text2)">Instagram</span>
+                  <span style="background:var(--muted3);border:1px solid var(--border);border-radius:100px;padding:3px 10px;font-size:.72rem;color:var(--text2)">Lemon8</span>
+                </div>
+              </div>
+              <div style="flex:1;min-width:240px">
+                <div style="font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:6px">Influencer ที่ติดตาม</div>
+                <div style="display:flex;flex-wrap:wrap;gap:8px">
+                  <span style="background:var(--panel);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:.75rem;color:var(--cream)">🩺 หมอแล็บแพนด้า</span>
+                  <span style="background:var(--panel);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:.75rem;color:var(--cream)">💪 Fit Kab Dao (ดาว วิภา)</span>
+                  <span style="background:var(--panel);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:.75rem;color:var(--cream)">🌿 เมจิ อโณมา</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Competitor Comparison Table — full width -->
+        <div style="margin-top:28px;margin-bottom:12px"><span class="badge badge-sage">ตารางวิเคราะห์คู่แข่ง</span></div>
+        <div style="overflow-x:auto">
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th style="width:130px">หัวข้อ</th>
+              <th style="color:var(--sage2)">Wellness Café <span style="font-weight:400;font-size:.7rem">(เรา)</span></th>
+              <th>Broccoli Revolution <span style="font-weight:400;font-size:.7rem">คู่แข่งตรง</span></th>
+              <th>Starbucks Thailand <span style="font-weight:400;font-size:.7rem">คู่แข่งทางอ้อม</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>จุดมุ่งหมาย</td><td>คาเฟ่สุขภาพดูแลกายและใจ ในชีวิตประจำวัน</td><td>ส่งเสริม Plant-based เพื่อสุขภาพยั่งยืน</td><td>"Third Place" ระหว่างบ้านและที่ทำงาน</td></tr>
+            <tr><td>คุณค่า</td><td class="comp-winner">อาหารดี + คลาส Wellness ในที่เดียว</td><td>อาหารสุขภาพจริงจัง ภาพลักษณ์รักษ์โลก</td><td>ความสะดวก สาขาเยอะ นั่งทำงานได้</td></tr>
+            <tr><td>สินค้า/บริการ</td><td class="comp-winner">เครื่องดื่มสุขภาพ + อาหาร + คลาสโยคะ/สมาธิ + ระบบสมาชิก</td><td>อาหาร Plant-based, Smoothie, Cold-pressed juice</td><td>กาแฟ เครื่องดื่ม ขนม เบเกอรี่</td></tr>
+            <tr><td>กลุ่มลูกค้า</td><td>คนทำงานวัย 25–45 สนใจสุขภาพ มีเวลาจำกัด</td><td>คนรักสุขภาพ วีแกน รายได้กลาง–สูง</td><td>คนทำงาน นักเรียน นักศึกษา คนทั่วไป</td></tr>
+            <tr><td>ราคา</td><td>150–300 ฿/เครื่องดื่ม · 300–500 ฿/คลาส</td><td>250–500 ฿/มื้อ</td><td>120–200 ฿/แก้ว</td></tr>
+            <tr><td>ช่องทาง</td><td>หน้าร้าน · Social Media · Delivery · Online Booking</td><td>หน้าร้าน · Delivery · Social Media</td><td>หน้าร้านจำนวนมาก · Delivery · App · Member</td></tr>
+            <tr><td style="color:var(--sage2);font-weight:600">จุดแข็ง</td><td class="comp-winner">รวม F&amp;B + Wellness ไม่มีคู่แข่งตรง · B2B Corporate</td><td>แบรนด์สุขภาพชัดเจน เมนูคุณภาพ</td><td>แบรนด์แข็งแกร่ง ทำเลดี ระบบสมาชิกดี</td></tr>
+            <tr><td style="color:var(--red);font-weight:600">จุดอ่อน</td><td>แบรนด์ใหม่ ต้องสร้างความน่าเชื่อถือ</td><td>ไม่มี Mental Wellness / Wellness Activity</td><td>ไม่เด่นเรื่องสุขภาพเป็นปัจจัยหลัก</td></tr>
+          </tbody>
+        </table>
+        </div>
+    </div>
+
+    <!-- SWOT -->
+    <div style="margin-top:44px">
+      <div style="margin-bottom:16px"><span class="badge badge-sage">SWOT Analysis</span></div>
+      <div class="swot-grid fade-up">
+        <div class="swot-card sw-s">
+          <div class="swot-header"><div class="sw-badge b-s">S</div><div class="sw-title">Strengths · จุดแข็ง</div></div>
+          <ul class="sw-list">
+            <li>Business Model หลายช่องทางรายได้ ลดความเสี่ยง</li>
+            <li>รวม F&amp;B + Wellness Activity — ไม่มีคู่แข่งโดยตรง</li>
+            <li>ทำเลดี ใกล้ BTS + สวนสาธารณะ</li>
+            <li>เครือข่าย Influencer + นักโภชนาการ + โค้ชโยคะ</li>
+            <li>IRR ~32% น่าสนใจสำหรับนักลงทุน</li>
+          </ul>
+        </div>
+        <div class="swot-card sw-w">
+          <div class="swot-header"><div class="sw-badge b-w">W</div><div class="sw-title">Weaknesses · จุดอ่อน</div></div>
+          <ul class="sw-list">
+            <li>ต้นทุนเริ่มต้นสูง 3.5 ล้านบาท</li>
+            <li>แบรนด์ใหม่ ต้องสร้างความน่าเชื่อถือ</li>
+            <li>การบริหารซับซ้อน ต้องดูแลทั้งคาเฟ่และ Activity Zone</li>
+            <li>พึ่งพาผู้เชี่ยวชาญภายนอก อาจมีความไม่แน่นอน</li>
+          </ul>
+        </div>
+        <div class="swot-card sw-o">
+          <div class="swot-header"><div class="sw-badge b-o">O</div><div class="sw-title">Opportunities · โอกาส</div></div>
+          <ul class="sw-list">
+            <li>ตลาด Wellness โลก $7.9 ล้านล้าน ปี 2026</li>
+            <li>Corporate Wellness กลาย HR Priority</li>
+            <li>สังคมผู้สูงอายุ ขยาย Active Aging Market</li>
+            <li>TikTok/IG สร้างแบรนด์ Wellness รวดเร็ว ต้นทุนต่ำ</li>
+            <li>ไทยเป็น Wellness Tourism Destination ระดับโลก</li>
+          </ul>
+        </div>
+        <div class="swot-card sw-t">
+          <div class="swot-header"><div class="sw-badge b-t">T</div><div class="sw-title">Threats · อุปสรรค</div></div>
+          <ul class="sw-list">
+            <li>การแข่งขันในตลาดคาเฟ่กรุงเทพฯ สูง</li>
+            <li>พฤติกรรมผู้บริโภคเปลี่ยนเร็ว ต้องปรับตาม Trend</li>
+            <li>เศรษฐกิจชะลอตัวอาจกระทบกำลังซื้อ</li>
+            <li>กฎหมายด้านสุขภาพ/อาหารอาจเปลี่ยนแปลง</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     4. MANAGEMENT
+══════════════════════════════════════ -->
+<section class="section" id="management">
+  <div class="section-inner">
+    <div class="sec-eyebrow">04 · Management Plan</div>
+    <h2 class="sec-title">แผนการบริหารจัดการ &amp; <em>วิสัยทัศน์</em></h2>
+    <div class="s-divider"></div>
+
+    <div class="g2 fade-up">
+      <div>
+        <div style="margin-bottom:12px"><span class="badge badge-sage">ข้อมูลธุรกิจ</span></div>
+        <table class="tbl" style="margin-bottom:24px">
+          <tbody>
+            <tr><td><strong style="color:var(--cream)">ชื่อกิจการ</strong></td><td>Wellness Cafe &amp; Wellness Activity Co., Ltd.</td></tr>
+            <tr><td><strong style="color:var(--cream)">รูปแบบ</strong></td><td>บริษัทจำกัด (Co., Ltd.)</td></tr>
+            <tr><td><strong style="color:var(--cream)">ที่ตั้ง</strong></td><td>ใกล้สวนสาธารณะ + สถานีรถไฟฟ้า กทม.</td></tr>
+            <tr><td><strong style="color:var(--cream)">ทุนจดทะเบียน</strong></td><td>3,500,000 ฿</td></tr>
+            <tr><td><strong style="color:var(--cream)">พื้นที่</strong></td><td>150-200 ตร.ม. · Cafe 50% / Activity 30%</td></tr>
+            <tr><td><strong style="color:var(--cream)">เปิดทำการ</strong></td><td>จ–ศ 07:00-21:00 · ส–อ 08:00-22:00</td></tr>
+          </tbody>
+        </table>
+
+        <div style="margin-bottom:12px"><span class="badge badge-sage">โครงสร้างองค์กร (10 คน)</span></div>
+        <table class="tbl">
+          <thead><tr><th>ตำแหน่ง</th><th class="num">จำนวน</th><th class="num">เงินเดือน/คน</th><th class="num">รวม (฿)</th></tr></thead>
+          <tbody>
+            <tr><td>Store Manager</td><td class="num">1</td><td class="num">35,000</td><td class="num">35,000</td></tr>
+            <tr><td>บาริสต้า</td><td class="num">2</td><td class="num">18,000</td><td class="num">36,000</td></tr>
+            <tr><td>พนักงานครัว Healthy Kitchen</td><td class="num">2</td><td class="num">20,000</td><td class="num">40,000</td></tr>
+            <tr><td>Floor Staff</td><td class="num">2</td><td class="num">17,000</td><td class="num">34,000</td></tr>
+            <tr><td>Wellness Instructor (Part-time)</td><td class="num">3</td><td class="num">12,000</td><td class="num">36,000</td></tr>
+            <tr class="total"><td>รวม</td><td class="num">10 คน</td><td class="num">—</td><td class="num">181,000/เดือน</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <div style="background:linear-gradient(135deg,rgba(58,140,66,.07),rgba(45,114,53,.04));border:1px solid var(--border);border-radius:12px;padding:28px;margin-bottom:24px">
+          <div style="font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--sage3);margin-bottom:10px">🌿 Vision</div>
+          <p style="font-size:.95rem;color:var(--cream);line-height:1.8;font-style:italic">"เป็น Wellness Destination อันดับหนึ่งของย่าน สำหรับคนเมืองที่ต้องการดูแลสุขภาพกายและจิตใจในชีวิตประจำวัน ผ่านการรับประทานอาหารที่ดีและกิจกรรม Wellness ที่เข้าถึงได้ง่าย"</p>
+        </div>
+
+        <div style="margin-bottom:12px"><span class="badge badge-sage">เป้าหมายธุรกิจ</span></div>
+        <div class="g3" style="gap:12px;margin-bottom:24px">
+          <div class="card" style="padding:18px">
+            <div class="card-title" style="font-size:.65rem">ระยะสั้น · ปีที่ 1</div>
+            <div class="card-body" style="font-size:.8rem">ลูกค้า 1,500 คน/รอบ ต่อเดือน · คลาส Wellness 400 คน/รอบ ต่อเดือน · Break-even เดือน 11</div>
+          </div>
+          <div class="card" style="padding:18px">
+            <div class="card-title" style="font-size:.65rem">ระยะกลาง · ปีที่ 2-3</div>
+            <div class="card-body" style="font-size:.8rem">B2B 5+ บริษัท/ปี · Online Product Line · เพิ่ม Wellness Class</div>
+          </div>
+          <div class="card gold-border" style="padding:18px">
+            <div class="card-title" style="font-size:.65rem">ระยะยาว · ปีที่ 4-5</div>
+            <div class="card-body" style="font-size:.8rem">ขยายสาขาที่ 2 · รายได้ 20M+ ฿/ปี</div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:12px"><span class="badge badge-gold">ปัจจัยแห่งความสำเร็จ</span></div>
+        <ul class="dlist">
+          <li>ทำเลใกล้ BTS + สวนสาธารณะ ตรง Pain Point กลุ่มเป้าหมาย</li>
+          <li>เมนูสุขภาพออกแบบโดยนักโภชนาการ</li>
+          <li>Wellness Instructor ใบรับรองมาตรฐานสากล</li>
+          <li>กลยุทธ์ B2B สร้างรายได้ประจำที่มั่นคง</li>
+          <li>Influencer Marketing เข้าถึง Target แม่นยำ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     5. MARKETING
+══════════════════════════════════════ -->
+<section class="section" id="marketing">
+  <div class="section-inner">
+    <div class="sec-eyebrow">05 · Marketing Plan</div>
+    <h2 class="sec-title">แผนการตลาด <em>— ดึงดูด · แปลงผล · รักษา</em></h2>
+    <div class="s-divider"></div>
+
+    <!-- ══ FUNNEL VISUAL ══ -->
+    <div class="fade-up" style="margin-bottom:44px">
+      <div style="margin-bottom:14px"><span class="badge badge-sage">Customer Funnel — เส้นทางลูกค้าตั้งแต่รู้จักจนเป็นแฟนประจำ</span></div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--panel);border:1px solid var(--border);border-radius:12px;overflow:hidden">
+
+        <!-- Stage 1: Awareness -->
+        <div style="padding:28px 20px;text-align:center;border-right:1px solid var(--border2);position:relative">
+          <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--sage3),var(--sage))"></div>
+          <div style="width:48px;height:48px;border-radius:50%;background:rgba(74,171,84,.12);border:1.5px solid var(--sage3);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:1.4rem">📱</div>
+          <div style="font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--sage3);margin-bottom:6px">AWARENESS</div>
+          <div style="font-size:.9rem;font-weight:600;color:var(--cream);margin-bottom:12px">รู้จักแบรนด์</div>
+          <div style="display:flex;flex-direction:column;gap:5px;text-align:left;font-size:.75rem;color:var(--text3)">
+            <span>📲 TikTok / IG Reels</span>
+            <span>🍋 Lemon8 Wellness Review</span>
+            <span>🗺 Google Maps SEO</span>
+            <span>👥 Word-of-Mouth</span>
+          </div>
+          <div style="margin-top:16px;padding:10px;background:rgba(74,171,84,.07);border-radius:8px">
+            <div style="font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--sage);font-weight:600;line-height:1">50K+</div>
+            <div style="font-size:.65rem;color:var(--text3);margin-top:2px">Reach / เดือน</div>
+          </div>
+        </div>
+
+        <!-- Stage 2: Consideration -->
+        <div style="padding:28px 20px;text-align:center;border-right:1px solid var(--border2);position:relative">
+          <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--sage),var(--sage2))"></div>
+          <div style="width:48px;height:48px;border-radius:50%;background:rgba(45,114,53,.1);border:1.5px solid var(--sage2);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:1.4rem">💬</div>
+          <div style="font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--sage2);margin-bottom:6px">CONSIDERATION</div>
+          <div style="font-size:.9rem;font-weight:600;color:var(--cream);margin-bottom:12px">สนใจ ทดลอง</div>
+          <div style="display:flex;flex-direction:column;gap:5px;text-align:left;font-size:.75rem;color:var(--text3)">
+            <span>🎁 Free Workshop เดือนแรก</span>
+            <span>⭐ Google Review 4.5+</span>
+            <span>🤝 Influencer Review</span>
+            <span>📍 Walk-in ทดลอง</span>
+          </div>
+          <div style="margin-top:16px;padding:10px;background:rgba(45,114,53,.07);border-radius:8px">
+            <div style="font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--sage2);font-weight:600;line-height:1">3,000</div>
+            <div style="font-size:.65rem;color:var(--text3);margin-top:2px">Visit / เดือน</div>
+          </div>
+        </div>
+
+        <!-- Stage 3: Conversion -->
+        <div style="padding:28px 20px;text-align:center;border-right:1px solid var(--border2);position:relative">
+          <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--sage2),var(--gold))"></div>
+          <div style="width:48px;height:48px;border-radius:50%;background:rgba(154,110,26,.1);border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:1.4rem">🛒</div>
+          <div style="font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">CONVERSION</div>
+          <div style="font-size:.9rem;font-weight:600;color:var(--cream);margin-bottom:12px">ซื้อ ใช้บริการ</div>
+          <div style="display:flex;flex-direction:column;gap:5px;text-align:left;font-size:.75rem;color:var(--text3)">
+            <span>💚 Bundle F&amp;B + คลาส</span>
+            <span>📱 LINE OA จองล่วงหน้า</span>
+            <span>🏢 B2B Cold Outreach</span>
+            <span>🎫 Intro Package ราคาพิเศษ</span>
+          </div>
+          <div style="margin-top:16px;padding:10px;background:rgba(154,110,26,.07);border-radius:8px">
+            <div style="font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--gold2);font-weight:600;line-height:1">1,500</div>
+            <div style="font-size:.65rem;color:var(--text3);margin-top:2px">Paying / เดือน</div>
+          </div>
+        </div>
+
+        <!-- Stage 4: Retention -->
+        <div style="padding:28px 20px;text-align:center;position:relative">
+          <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold2))"></div>
+          <div style="width:48px;height:48px;border-radius:50%;background:rgba(184,130,15,.1);border:1.5px solid var(--gold2);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:1.4rem">❤️</div>
+          <div style="font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);margin-bottom:6px">RETENTION</div>
+          <div style="font-size:.9rem;font-weight:600;color:var(--cream);margin-bottom:12px">กลับมา บอกต่อ</div>
+          <div style="display:flex;flex-direction:column;gap:5px;text-align:left;font-size:.75rem;color:var(--text3)">
+            <span>⭐ Loyalty Points Program</span>
+            <span>📅 Monthly Wellness Challenge</span>
+            <span>🎉 Member Exclusive Event</span>
+            <span>📦 Auto-renew Membership</span>
+          </div>
+          <div style="margin-top:16px;padding:10px;background:rgba(184,130,15,.07);border-radius:8px">
+            <div style="font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--gold2);font-weight:600;line-height:1">40%</div>
+            <div style="font-size:.65rem;color:var(--text3);margin-top:2px">Repeat Rate เดือน 6</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ CHANNELS + CONTENT ══ -->
+    <div class="g2 fade-up" style="margin-bottom:36px">
+
+      <!-- Left: Channel mix -->
+      <div>
+        <div style="margin-bottom:14px"><span class="badge badge-sage">Channel Mix &amp; งบประมาณปีที่ 1 (~450K ฿)</span></div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px">
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:.78rem;margin-bottom:5px">
+              <span style="color:var(--text2);font-weight:500">📱 TikTok / IG Reels (คอนเทนต์ + Boost)</span>
+              <span style="color:var(--sage2);font-weight:600">40% · ≈180K ฿</span>
+            </div>
+            <div style="height:8px;background:var(--muted3);border-radius:4px;overflow:hidden">
+              <div style="width:40%;height:100%;background:linear-gradient(90deg,var(--sage3),var(--sage));border-radius:4px"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:.78rem;margin-bottom:5px">
+              <span style="color:var(--text2);font-weight:500">🤝 Influencer &amp; KOL Collaboration</span>
+              <span style="color:var(--sage2);font-weight:600">25% · ≈112K ฿</span>
+            </div>
+            <div style="height:8px;background:var(--muted3);border-radius:4px;overflow:hidden">
+              <div style="width:25%;height:100%;background:var(--sage2);border-radius:4px"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:.78rem;margin-bottom:5px">
+              <span style="color:var(--text2);font-weight:500">🎉 Grand Opening Campaign</span>
+              <span style="color:var(--gold2);font-weight:600">20% · ≈90K ฿</span>
+            </div>
+            <div style="height:8px;background:var(--muted3);border-radius:4px;overflow:hidden">
+              <div style="width:20%;height:100%;background:var(--gold);border-radius:4px"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:.78rem;margin-bottom:5px">
+              <span style="color:var(--text2);font-weight:500">🗺 Google My Business + Local SEO</span>
+              <span style="color:var(--text3);font-weight:600">15% · ≈68K ฿</span>
+            </div>
+            <div style="height:8px;background:var(--muted3);border-radius:4px;overflow:hidden">
+              <div style="width:15%;height:100%;background:var(--text3);border-radius:4px"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px"><span class="badge badge-gold">Key Influencers — ตรง Persona เมย์</span></div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--panel);border:1px solid var(--border2);border-radius:10px">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(58,140,66,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">🐼</div>
+            <div style="flex:1">
+              <div style="font-size:.84rem;font-weight:600;color:var(--cream)">หมอแล็บแพนด้า</div>
+              <div style="font-size:.72rem;color:var(--text3)">3.5M FB · สุขภาพ + ตลก · เข้าถึงง่าย</div>
+            </div>
+            <span style="font-size:.62rem;background:rgba(58,140,66,.1);color:var(--sage2);padding:3px 9px;border-radius:100px;font-weight:600;flex-shrink:0">Awareness</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--panel);border:1px solid var(--border2);border-radius:10px">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(58,140,66,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">💪</div>
+            <div style="flex:1">
+              <div style="font-size:.84rem;font-weight:600;color:var(--cream)">Fit Kab Dao (ดาว วิภา)</div>
+              <div style="font-size:.72rem;color:var(--text3)">1M+ YouTube · ออกกำลังกาย + Lifestyle</div>
+            </div>
+            <span style="font-size:.62rem;background:rgba(58,140,66,.1);color:var(--sage2);padding:3px 9px;border-radius:100px;font-weight:600;flex-shrink:0">Conversion</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--panel);border:1px solid var(--border2);border-radius:10px">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(184,130,15,.08);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">🌿</div>
+            <div style="flex:1">
+              <div style="font-size:.84rem;font-weight:600;color:var(--cream)">เมจิ อโณมา + Lemon8</div>
+              <div style="font-size:.72rem;color:var(--text3)">สุขภาพองค์รวม · Wellness Spot Discovery</div>
+            </div>
+            <span style="font-size:.62rem;background:rgba(184,130,15,.1);color:var(--gold2);padding:3px 9px;border-radius:100px;font-weight:600;flex-shrink:0">Lifestyle</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Content pillars + B2B -->
+      <div>
+        <div style="margin-bottom:14px"><span class="badge badge-sage">Content Pillars — 4 เสาหลักของคอนเทนต์</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px">
+          <div style="padding:16px;background:var(--panel);border:1px solid var(--border2);border-radius:10px;border-top:3px solid var(--sage)">
+            <div style="font-size:.8rem;font-weight:700;color:var(--sage);margin-bottom:6px">🌅 Morning Ritual</div>
+            <div style="font-size:.75rem;color:var(--text3);line-height:1.65">Time-lapse คลาสเช้า · Breakfast Prep ASMR · "เริ่มวันดีกับเรา" Series<br><br><span style="color:var(--text3);opacity:.7">📅 ทุกวัน จ–ศ</span></div>
+          </div>
+          <div style="padding:16px;background:var(--panel);border:1px solid var(--border2);border-radius:10px;border-top:3px solid var(--sage2)">
+            <div style="font-size:.8rem;font-weight:700;color:var(--sage2);margin-bottom:6px">🥗 Food Education</div>
+            <div style="font-size:.75rem;color:var(--text3);line-height:1.65">สรรพคุณวัตถุดิบ · Clean eating tips · เมนูประจำสัปดาห์<br><br><span style="opacity:.7">📅 อังคาร · พฤหัส</span></div>
+          </div>
+          <div style="padding:16px;background:var(--panel);border:1px solid var(--border2);border-radius:10px;border-top:3px solid var(--gold)">
+            <div style="font-size:.8rem;font-weight:700;color:var(--gold2);margin-bottom:6px">🧘 Wellness Micro-Tips</div>
+            <div style="font-size:.75rem;color:var(--text3);line-height:1.65">ท่าโยคะ 60 วิ · Breathing exercise · Sleep hygiene<br><br><span style="opacity:.7">📅 พุธ · เสาร์</span></div>
+          </div>
+          <div style="padding:16px;background:var(--panel);border:1px solid var(--border2);border-radius:10px;border-top:3px solid var(--amber)">
+            <div style="font-size:.8rem;font-weight:700;color:var(--amber);margin-bottom:6px">⭐ Social Proof</div>
+            <div style="font-size:.75rem;color:var(--text3);line-height:1.65">Customer Review · Before/After · Transformation Story<br><br><span style="opacity:.7">📅 ศุกร์ · อาทิตย์</span></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px"><span class="badge badge-gold">B2B Sales Strategy — เจาะองค์กร</span></div>
+        <div style="background:linear-gradient(135deg,rgba(184,130,15,.05),rgba(154,110,26,.03));border:1px solid rgba(184,130,15,.25);border-radius:10px;padding:20px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:14px">
+            <div>
+              <div style="font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin-bottom:8px">เป้าหมาย</div>
+              <ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
+                <li style="font-size:.78rem;color:var(--text2)">▸ ออฟฟิศ / SME ใกล้ BTS</li>
+                <li style="font-size:.78rem;color:var(--text2)">▸ HR Manager = Decision Maker</li>
+                <li style="font-size:.78rem;color:var(--text2)">▸ พนักงาน 30+ คน</li>
+              </ul>
+            </div>
+            <div>
+              <div style="font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin-bottom:8px">แนวทาง</div>
+              <ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
+                <li style="font-size:.78rem;color:var(--text2)">▸ Cold Outreach → Free Trial</li>
+                <li style="font-size:.78rem;color:var(--text2)">▸ เดือน 1–6: 1 บริษัท/เดือน</li>
+                <li style="font-size:.78rem;color:var(--text2)">▸ เดือน 7–12: 3+ บริษัท/เดือน</li>
+              </ul>
+            </div>
+          </div>
+          <div style="padding-top:12px;border-top:1px solid rgba(184,130,15,.15);display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:.78rem;color:var(--text3)">เป้ารายได้ B2B ปีที่ 1</span>
+            <span style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--gold2);font-weight:600">720,000 ฿</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ KPI ROADMAP ══ -->
+    <div class="fade-up">
+      <div style="margin-bottom:14px"><span class="badge badge-sage">KPI Roadmap 12 เดือนแรก</span></div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+        <div style="background:var(--panel);border:1px solid var(--border2);border-radius:10px;padding:20px;border-top:3px solid var(--sage3)">
+          <div style="font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sage3);margin-bottom:8px">เดือน 1–3 · LAUNCH</div>
+          <div style="font-size:.92rem;font-weight:600;color:var(--cream);margin-bottom:10px">Brand Awareness</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
+            <li style="display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--text2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--sage3);flex-shrink:0"></span>Followers +3,000</li>
+            <li style="display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--text2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--sage3);flex-shrink:0"></span>ลูกค้า 1,500 คน/เดือน</li>
+            <li style="display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--text2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--sage3);flex-shrink:0"></span>Google Review 30+ รีวิว</li>
+            <li style="display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--text2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--sage3);flex-shrink:0"></span>B2B สัญญาแรก 1 บริษัท</li>
+          </ul>
+        </div>
+        <div style="background:var(--panel);border:1px solid var(--border2);border-radius:10px;padding:20px;border-top:3px solid var(--sage2)">
+          <div style="font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sage2);margin-bottom:8px">เดือน 4–6 · GROWTH</div>
+          <div style="font-size:.92rem;font-weight:600;color:var(--cream);margin-bottom:10px">Repeat &amp; Membership</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
+            <li style="display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--text2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--sage2);flex-shrink:0"></span>Repeat Rate 30%</li>
+            <li style="display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--text2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--sage2);flex-shrink:0"></span>Monthly Member 150+ คน</li>
+            <li style="display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--text2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--sage2);flex-shrink:0"></span>คลาสเต็ม 70%+ ทุกรอบ</li>
+            <li style="display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--text2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--sage2);flex-shrink:0"></span>Rating 4.5★+ (Google)</li>
+          </ul>
+        </div>
+        <div style="background:var(--panel);border:1px solid rgba(184,130,15,.2);border-radius:10px;padding:20px;border-top:3px solid var(--gold2)">
+          <div style="font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2);margin-bottom:8px">เดือน 7–12 · SCALE</div>
+          <div style="font-size:.92rem;font-weight:600;color:var(--cream);margin-bottom:10px">B2B Scale-up</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
+            <li style="display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--text2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--gold2);flex-shrink:0"></span>B2B 3+ ลูกค้า Active</li>
+            <li style="display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--text2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--gold2);flex-shrink:0"></span>รายได้ 500K+ ฿/เดือน</li>
+            <li style="display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--text2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--gold2);flex-shrink:0"></span>Repeat Rate 40%+</li>
+            <li style="display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--text2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--gold2);flex-shrink:0"></span>✅ Break-even เดือน 11 (ภายใน Phase นี้)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     6. OPERATIONS
+══════════════════════════════════════ -->
+<section class="section" id="ops">
+  <div class="section-inner">
+    <div class="sec-eyebrow">06 · Operations Plan</div>
+    <h2 class="sec-title">แผนการบริการ &amp; <em>การดำเนินงาน</em></h2>
+    <div class="s-divider"></div>
+
+    <div class="g2 fade-up">
+      <div>
+        <div style="margin-bottom:12px"><span class="badge badge-sage">Layout พื้นที่ 150–200 ตร.ม.</span></div>
+
+        <!-- Space layout visual -->
+        <div style="background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:20px">
+          <div style="display:grid;grid-template-columns:5fr 3fr 2fr;gap:6px;height:100px;margin-bottom:10px">
+            <div style="background:rgba(58,140,66,.1);border:1.5px solid var(--sage);border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center">
+              <span style="font-size:1.2rem">☕</span>
+              <span style="font-size:.7rem;font-weight:700;color:var(--sage)">Cafe &amp; Dining</span>
+              <span style="font-size:.65rem;color:var(--text3)">50% · 40 ที่นั่ง</span>
+            </div>
+            <div style="background:rgba(45,114,53,.08);border:1.5px solid var(--sage2);border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center">
+              <span style="font-size:1.2rem">🧘</span>
+              <span style="font-size:.7rem;font-weight:700;color:var(--sage2)">Activity Zone</span>
+              <span style="font-size:.65rem;color:var(--text3)">30% · 15 คน</span>
+            </div>
+            <div style="background:rgba(184,130,15,.06);border:1.5px solid rgba(184,130,15,.3);border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center">
+              <span style="font-size:.9rem">🍳</span>
+              <span style="font-size:.65rem;font-weight:700;color:var(--gold2)">Kitchen</span>
+              <span style="font-size:.62rem;color:var(--text3)">20%</span>
+            </div>
+          </div>
+          <div style="font-size:.7rem;color:var(--text3);text-align:center">ทำเล: ใกล้ BTS + สวนสาธารณะ เดิน 5 นาที · จ–ศ 07:00–21:00 · ส–อ 08:00–22:00</div>
+        </div>
+
+        <div style="margin-bottom:12px"><span class="badge badge-sage">ประมาณการบริการรายเดือน ปีที่ 1</span></div>
+        <table class="tbl">
+          <thead><tr><th>รายการ</th><th>ต้น (ม.ค.)</th><th>กลาง (มิ.ย.)</th><th>ปลาย (ธ.ค.)</th></tr></thead>
+          <tbody>
+            <tr><td>ลูกค้า F&B (คน/วัน)</td><td>40</td><td>85</td><td>100</td></tr>
+            <tr><td>ลูกค้าคลาส (คน/รอบ)</td><td>8</td><td>13</td><td>15</td></tr>
+            <tr><td>รายได้ F&B (฿/เดือน)</td><td class="pos">192K</td><td class="pos">408K</td><td class="pos">480K</td></tr>
+            <tr><td>รายได้คลาส (฿/เดือน)</td><td class="pos">96K</td><td class="pos">156K</td><td class="pos">180K</td></tr>
+            <tr class="total"><td>รวมรายได้ (฿/เดือน)</td><td>288K</td><td>564K</td><td>660K</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <div style="margin-bottom:12px"><span class="badge badge-sage">ขั้นตอนการให้บริการ</span></div>
+        <div class="steps" style="margin-bottom:28px">
+          <div class="step-item"><div class="step-num">1</div><div class="step-txt"><strong style="color:var(--cream)">ต้อนรับลูกค้า</strong> — พนักงานแนะนำโปรแกรมและเมนูประจำวัน (30 วินาที)</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-txt"><strong style="color:var(--cream)">เลือกบริการ</strong> — สั่งอาหาร/เครื่องดื่ม หรือลงทะเบียนคลาส Wellness</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-txt"><strong style="color:var(--cream)">ชำระเงิน</strong> — ผ่าน POS · สมาชิกสแกนสะสมแต้ม Loyalty Points</div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-txt"><strong style="color:var(--cream)">รับบริการ</strong> — นั่ง Cafe Zone หรือเข้า Activity Zone ตามที่เลือก</div></div>
+          <div class="step-item"><div class="step-num">5</div><div class="step-txt"><strong style="color:var(--cream)">After Service</strong> — Feedback ผ่าน QR Code + แนะนำนัดหมายครั้งถัดไป</div></div>
+        </div>
+
+        <div style="margin-bottom:12px"><span class="badge badge-gold">แผนดำเนินการอื่นในอนาคต</span></div>
+        <ul class="dlist">
+          <li><strong style="color:var(--cream)">ปีที่ 2:</strong> Online Wellness Shop — ชาสมุนไพร, คอลลาเจน, Supplement</li>
+          <li><strong style="color:var(--cream)">ปีที่ 3:</strong> LINE OA + App จองคลาส + สะสมแต้ม Loyalty</li>
+          <li><strong style="color:var(--cream)">ปีที่ 4:</strong> Online Wellness Course — ขาย Digital Content</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     7. FINANCIALS
+══════════════════════════════════════ -->
+<section class="section" id="financials">
+  <div class="section-inner">
+    <div class="sec-eyebrow">07 · Financial Plan</div>
+    <h2 class="sec-title">แผนการเงิน <em>5 ปี</em></h2>
+    <div class="s-divider"></div>
+
+    <!-- Investment -->
+    <div style="margin-bottom:36px">
+      <div style="margin-bottom:12px"><span class="badge badge-sage">9.1 โครงสร้างเงินลงทุน</span></div>
+      <table class="tbl fade-up">
+        <thead><tr><th>#</th><th>รายการ</th><th>แหล่งเงิน</th><th class="num">มูลค่า (฿)</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>ค่าเช่าพื้นที่ล่วงหน้า 6 เดือน + Deposit</td><td>ทุนเจ้าของ</td><td class="num">600,000</td></tr>
+          <tr><td>2</td><td>ค่าตกแต่งและปรับปรุงพื้นที่</td><td>ทุนเจ้าของ</td><td class="num">800,000</td></tr>
+          <tr><td>3</td><td>อุปกรณ์ครัว เครื่องชงกาแฟ และ Wellness</td><td>เงินกู้ระยะยาว</td><td class="num">1,235,000</td></tr>
+          <tr><td>4</td><td>ระบบ IT, POS, Software</td><td>ทุนเจ้าของ</td><td class="num">80,000</td></tr>
+          <tr><td>5</td><td>วัตถุดิบเปิดตัว + ค่าการตลาด Grand Opening</td><td>ทุนเจ้าของ</td><td class="num">350,000</td></tr>
+          <tr><td>6</td><td>Working Capital (3 เดือนแรก)</td><td>เงินกู้ระยะสั้น</td><td class="num">435,000</td></tr>
+          <tr class="total"><td colspan="2"><strong>รวมเงินลงทุนทั้งสิ้น</strong></td><td>52% ทุน · 48% กู้</td><td class="num">3,500,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Revenue bars -->
+    <div class="g2 fade-up" style="margin-bottom:36px">
+      <div>
+        <div style="margin-bottom:12px"><span class="badge badge-sage">9.6 ประมาณการรายได้ 5 ปี</span></div>
+        <div class="rev-bars">
+          <div class="rbar-row"><div class="rbar-lbl">ปีที่ 1</div><div class="rbar-track"><div class="rbar-fill rfill1" data-w="42"><span class="rbar-val">6.44M ฿</span></div></div></div>
+          <div class="rbar-row"><div class="rbar-lbl">ปีที่ 2</div><div class="rbar-track"><div class="rbar-fill rfill2" data-w="57"><span class="rbar-val">8.70M ฿</span></div></div></div>
+          <div class="rbar-row"><div class="rbar-lbl">ปีที่ 3</div><div class="rbar-track"><div class="rbar-fill rfill3" data-w="71"><span class="rbar-val">10.9M ฿</span></div></div></div>
+          <div class="rbar-row"><div class="rbar-lbl">ปีที่ 4</div><div class="rbar-track"><div class="rbar-fill rfill4" data-w="86"><span class="rbar-val">13.1M ฿</span></div></div></div>
+          <div class="rbar-row"><div class="rbar-lbl">ปีที่ 5</div><div class="rbar-track"><div class="rbar-fill rfill5" data-w="100"><span class="rbar-val">15.3M ฿</span></div></div></div>
+        </div>
+
+        <div style="margin-top:14px;padding:12px 16px;background:rgba(184,130,15,.07);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;font-size:.75rem;color:var(--text2);line-height:1.7">
+          <strong style="color:var(--gold2)">⚠️ หมายเหตุ:</strong> ประมาณการรายได้ปีที่ 1–5 นี้คำนวณบนสมมติฐาน <strong>สาขาเดียว</strong> เท่านั้น<br>
+          การขยายสาขาที่ 2 (เป้าหมายปีที่ 4–5) เป็น <strong>แผนฉุกเฉินระยะยาว</strong> ที่ขึ้นอยู่กับผลประกอบการจริงในปีที่ 3 และจะจัดทำประมาณการแยกต่างหากเมื่อถึงเวลา
+        </div>
+
+        <div style="margin-top:20px;margin-bottom:12px"><span class="badge badge-sage">สัดส่วนรายได้ปีที่ 1</span></div>
+        <table class="tbl">
+          <thead><tr><th>ช่องทางรายได้</th><th class="num">ปีที่ 1 (฿)</th></tr></thead>
+          <tbody>
+            <tr><td>เครื่องดื่มสุขภาพ</td><td class="num pos">2,100,000</td></tr>
+            <tr><td>อาหารเพื่อสุขภาพ</td><td class="num pos">1,400,000</td></tr>
+            <tr><td>ค่าคลาส Wellness</td><td class="num pos">2,000,000</td></tr>
+            <tr><td>Corporate Wellness</td><td class="num pos">720,000</td></tr>
+            <tr><td>Event Space + ผลิตภัณฑ์</td><td class="num pos">220,000</td></tr>
+            <tr class="total"><td>รวม</td><td class="num">6,440,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div style="margin-bottom:12px"><span class="badge badge-sage">9.3 สมมติฐานทางการเงิน</span></div>
+        <div style="margin-bottom:10px;padding:10px 14px;background:var(--muted3);border-radius:6px;font-size:.74rem;color:var(--text3);line-height:1.6">
+          📌 สมมติฐานทั้งหมดใช้สำหรับ <strong style="color:var(--text2)">1 สาขา</strong> ต่อเนื่อง 5 ปี ไม่รวมต้นทุนขยายสาขาใหม่
+        </div>
+        <table class="tbl" style="margin-bottom:20px">
+          <thead><tr><th>สมมติฐาน</th><th>ปี 1</th><th>ปี 3</th><th>ปี 5</th></tr></thead>
+          <tbody>
+            <tr><td>เติบโตลูกค้า (%)</td><td>—</td><td>+20%</td><td>+12%</td></tr>
+            <tr><td>Food Cost</td><td>32%</td><td>28%</td><td>26%</td></tr>
+            <tr><td>Labor Cost</td><td>28%</td><td>25%</td><td>23%</td></tr>
+            <tr><td>ค่าเช่า</td><td>15%</td><td>11%</td><td>9%</td></tr>
+            <tr><td>ดอกเบี้ยเงินกู้</td><td>6.5%</td><td>6.5%</td><td>6.5%</td></tr>
+          </tbody>
+        </table>
+
+        <div style="margin-bottom:12px"><span class="badge badge-sage">9.4 นโยบายทางการเงิน</span></div>
+        <ul class="dlist">
+          <li>รับชำระเงินสด 100% สำหรับบุคคลทั่วไป</li>
+          <li>B2B Corporate ให้เครดิต 30 วัน</li>
+          <li>สำรองเงินสด 3 เดือนของค่าใช้จ่ายตลอด 5 ปี</li>
+          <li>ชำระคืนเงินกู้ระยะยาว 247,000 ฿/ปี</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- P&L -->
+    <div style="margin-bottom:28px">
+      <div style="margin-bottom:12px"><span class="badge badge-sage">9.10 ประมาณการงบกำไรขาดทุน</span></div>
+      <table class="tbl fade-up">
+        <thead><tr><th>รายการ (฿)</th><th class="num">ปีที่ 1</th><th class="num">ปีที่ 2</th><th class="num">ปีที่ 3</th><th class="num">ปีที่ 4</th><th class="num">ปีที่ 5</th></tr></thead>
+        <tbody>
+          <tr><td>รวมรายได้</td><td class="num">6,440,000</td><td class="num">8,700,000</td><td class="num">10,900,000</td><td class="num">13,100,000</td><td class="num">15,300,000</td></tr>
+          <tr><td>(-) ต้นทุนขาย</td><td class="num neg">2,061,000</td><td class="num neg">2,610,000</td><td class="num neg">3,052,000</td><td class="num neg">3,537,000</td><td class="num neg">3,978,000</td></tr>
+          <tr class="hl"><td>= กำไรขั้นต้น</td><td class="num">4,379,000</td><td class="num">6,090,000</td><td class="num">7,848,000</td><td class="num">9,563,000</td><td class="num">11,322,000</td></tr>
+          <tr><td>(-) ค่าใช้จ่ายรวม</td><td class="num neg">4,150,000</td><td class="num neg">4,805,000</td><td class="num neg">5,493,000</td><td class="num neg">6,171,000</td><td class="num neg">6,774,000</td></tr>
+          <tr><td>(-) ดอกเบี้ยจ่าย</td><td class="num neg">108,000</td><td class="num neg">88,000</td><td class="num neg">67,000</td><td class="num neg">43,000</td><td class="num neg">19,000</td></tr>
+          <tr><td>(-) ภาษีเงินได้ (20%)</td><td class="num neg">24,200</td><td class="num neg">259,400</td><td class="num neg">484,600</td><td class="num neg">706,400</td><td class="num neg">955,800</td></tr>
+          <tr class="inv"><td>= กำไรสุทธิ</td><td class="num">96,800</td><td class="num">1,037,600</td><td class="num">1,938,400</td><td class="num">2,825,600</td><td class="num">3,823,200</td></tr>
+          <tr><td>Net Margin (%)</td><td class="num pos">1.5%</td><td class="num pos">11.9%</td><td class="num pos">17.8%</td><td class="num pos">21.6%</td><td class="num pos">25.0%</td></tr>
+          <tr><td>Gross Margin (%)</td><td class="num">68%</td><td class="num">70%</td><td class="num">72%</td><td class="num">73%</td><td class="num">74%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Ratios -->
+    <div class="g2 fade-up">
+      <div>
+        <div style="margin-bottom:12px"><span class="badge badge-sage">9.13 อัตราส่วนทางการเงิน</span></div>
+        <table class="tbl">
+          <thead><tr><th>ตัวชี้วัด</th><th class="num">ปีที่ 1</th><th class="num">ปีที่ 3</th><th class="num">ปีที่ 5</th></tr></thead>
+          <tbody>
+            <tr><td>Current Ratio</td><td class="num">6.2x</td><td class="num">27.7x</td><td class="num">33.6x</td></tr>
+            <tr><td>ROA</td><td class="num pos">3%</td><td class="num pos">52%</td><td class="num pos">103%</td></tr>
+            <tr><td>ROE</td><td class="num pos">5%</td><td class="num pos">89%</td><td class="num pos">209%</td></tr>
+            <tr><td>Debt/Equity Ratio</td><td class="num">0.91x</td><td class="num">0.33x</td><td class="num pos">0.12x</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div style="margin-bottom:12px"><span class="badge badge-sage">9.11 กระแสเงินสดจากการดำเนินการ</span></div>
+        <table class="tbl">
+          <thead><tr><th>ปี</th><th class="num">กระแสเงินสด (฿)</th></tr></thead>
+          <tbody>
+            <tr><td>ปีที่ 1</td><td class="num pos">1,840,800</td></tr>
+            <tr><td>ปีที่ 2</td><td class="num pos">3,275,600</td></tr>
+            <tr><td>ปีที่ 3</td><td class="num pos">4,572,400</td></tr>
+            <tr><td>ปีที่ 4</td><td class="num pos">5,824,600</td></tr>
+            <tr class="total"><td>ปีที่ 5</td><td class="num pos">7,099,200</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── Financial Highlights ── -->
+    <div style="margin-top:44px" class="fade-up">
+      <div style="margin-bottom:16px"><span class="badge badge-sage">9.12 ไฮไลท์ทางการเงิน</span></div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border2);border-radius:12px;overflow:hidden;border:1px solid var(--border)">
+        <div style="background:var(--panel);padding:28px 22px;text-align:center">
+          <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--red);line-height:1">−547K ฿</div>
+          <div style="font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-top:8px">ขาดทุนสะสมสูงสุด</div>
+          <div style="font-size:.72rem;color:var(--text3);margin-top:4px">เดือนที่ 5</div>
+        </div>
+        <div style="background:var(--panel);padding:28px 22px;text-align:center">
+          <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--sage2);line-height:1">96.8K ฿</div>
+          <div style="font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-top:8px">กำไรสุทธิปีที่ 1</div>
+          <div style="font-size:.72rem;color:var(--text3);margin-top:4px">Net Margin 1.5%</div>
+        </div>
+        <div style="background:var(--panel);padding:28px 22px;text-align:center">
+          <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--gold2);line-height:1">1.04M ฿</div>
+          <div style="font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-top:8px">กำไรสุทธิปีที่ 2</div>
+          <div style="font-size:.72rem;color:var(--text3);margin-top:4px">Net Margin 11.9%</div>
+        </div>
+        <div style="background:rgba(58,140,66,.05);padding:28px 22px;text-align:center;border-left:3px solid var(--sage)">
+          <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--sage2);line-height:1">~3 ปี</div>
+          <div style="font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-top:8px">Payback Period</div>
+          <div style="font-size:.72rem;color:var(--text3);margin-top:4px">IRR ~32%</div>
+        </div>
+      </div>
+
+      <div style="margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div style="background:var(--panel);border:1px solid var(--border2);border-radius:10px;padding:20px 24px">
+          <div style="font-size:.67rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--text3);margin-bottom:14px">แนวโน้ม Net Margin รายปี</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="font-size:.75rem;color:var(--text3);width:44px;flex-shrink:0">ปีที่ 1</span>
+              <div style="flex:1;height:22px;background:var(--muted3);border-radius:4px;overflow:hidden">
+                <div style="width:1.5%;height:100%;background:var(--sage3);border-radius:4px;display:flex;align-items:center;padding-left:6px"><span style="font-size:.68rem;color:#fff;white-space:nowrap;padding-left:2px">1.5%</span></div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="font-size:.75rem;color:var(--text3);width:44px;flex-shrink:0">ปีที่ 2</span>
+              <div style="flex:1;height:22px;background:var(--muted3);border-radius:4px;overflow:hidden">
+                <div style="width:11.9%;height:100%;background:var(--sage2);border-radius:4px;display:flex;align-items:center"><span style="font-size:.68rem;color:#fff;padding-left:6px">11.9%</span></div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="font-size:.75rem;color:var(--text3);width:44px;flex-shrink:0">ปีที่ 3</span>
+              <div style="flex:1;height:22px;background:var(--muted3);border-radius:4px;overflow:hidden">
+                <div style="width:17.8%;height:100%;background:var(--sage);border-radius:4px;display:flex;align-items:center"><span style="font-size:.68rem;color:#fff;padding-left:6px">17.8%</span></div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="font-size:.75rem;color:var(--text3);width:44px;flex-shrink:0">ปีที่ 4</span>
+              <div style="flex:1;height:22px;background:var(--muted3);border-radius:4px;overflow:hidden">
+                <div style="width:21.6%;height:100%;background:var(--gold);border-radius:4px;display:flex;align-items:center"><span style="font-size:.68rem;color:#fff;padding-left:6px">21.6%</span></div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="font-size:.75rem;color:var(--text3);width:44px;flex-shrink:0">ปีที่ 5</span>
+              <div style="flex:1;height:22px;background:var(--muted3);border-radius:4px;overflow:hidden">
+                <div style="width:25%;height:100%;background:var(--gold2);border-radius:4px;display:flex;align-items:center"><span style="font-size:.68rem;color:#fff;padding-left:6px">25.0%</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:var(--panel);border:1px solid var(--border2);border-radius:10px;padding:20px 24px">
+          <div style="font-size:.67rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--text3);margin-bottom:14px">กระแสเงินสดจากการดำเนินงาน</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="font-size:.75rem;color:var(--text3);width:44px;flex-shrink:0">ปีที่ 1</span>
+              <div style="flex:1;height:22px;background:var(--muted3);border-radius:4px;overflow:hidden">
+                <div style="width:26%;height:100%;background:var(--sage3);border-radius:4px;display:flex;align-items:center"><span style="font-size:.68rem;color:#fff;padding-left:6px">1.84M</span></div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="font-size:.75rem;color:var(--text3);width:44px;flex-shrink:0">ปีที่ 2</span>
+              <div style="flex:1;height:22px;background:var(--muted3);border-radius:4px;overflow:hidden">
+                <div style="width:46%;height:100%;background:var(--sage2);border-radius:4px;display:flex;align-items:center"><span style="font-size:.68rem;color:#fff;padding-left:6px">3.28M</span></div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="font-size:.75rem;color:var(--text3);width:44px;flex-shrink:0">ปีที่ 3</span>
+              <div style="flex:1;height:22px;background:var(--muted3);border-radius:4px;overflow:hidden">
+                <div style="width:64%;height:100%;background:var(--sage);border-radius:4px;display:flex;align-items:center"><span style="font-size:.68rem;color:#fff;padding-left:6px">4.57M</span></div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="font-size:.75rem;color:var(--text3);width:44px;flex-shrink:0">ปีที่ 4</span>
+              <div style="flex:1;height:22px;background:var(--muted3);border-radius:4px;overflow:hidden">
+                <div style="width:82%;height:100%;background:var(--gold);border-radius:4px;display:flex;align-items:center"><span style="font-size:.68rem;color:#fff;padding-left:6px">5.82M</span></div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="font-size:.75rem;color:var(--text3);width:44px;flex-shrink:0">ปีที่ 5</span>
+              <div style="flex:1;height:22px;background:var(--muted3);border-radius:4px;overflow:hidden">
+                <div style="width:100%;height:100%;background:var(--gold2);border-radius:4px;display:flex;align-items:center"><span style="font-size:.68rem;color:#fff;padding-left:6px">7.10M</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     8. RISK
+══════════════════════════════════════ -->
+<section class="section" id="risk">
+  <div class="section-inner">
+    <div class="sec-eyebrow">08 · Risk Assessment</div>
+    <h2 class="sec-title">แผนฉุกเฉิน &amp; <em>การประเมินความเสี่ยง</em></h2>
+    <div class="s-divider"></div>
+
+    <div class="risk-grid fade-up">
+      <div class="risk-card">
+        <div class="risk-head"><div class="risk-title">รายได้ต่ำกว่าคาด 3 เดือนแรก</div><span class="rlevel rl-hi">สูง</span></div>
+        <div class="risk-sol">สำรอง Working Capital 3 เดือน + เร่ง B2B Sales ตั้งแต่เดือนแรก</div>
+      </div>
+      <div class="risk-card">
+        <div class="risk-head"><div class="risk-title">Wellness Instructor ลาออกกะทันหัน</div><span class="rlevel rl-md">กลาง</span></div>
+        <div class="risk-sol">สัญญา 6 เดือน + Backup Pool ผู้สอนสำรอง 2-3 คนพร้อมเสมอ</div>
+      </div>
+      <div class="risk-card">
+        <div class="risk-head"><div class="risk-title">คู่แข่งรายใหม่เปิดในทำเลใกล้เคียง</div><span class="rlevel rl-md">กลาง</span></div>
+        <div class="risk-sol">เน้น Brand Identity + Expert Instructors ใบรับรองมาตรฐานสากล เลียนแบบยาก</div>
+      </div>
+      <div class="risk-card">
+        <div class="risk-head"><div class="risk-title">เศรษฐกิจชะลอตัว กระทบกำลังซื้อ</div><span class="rlevel rl-md">กลาง</span></div>
+        <div class="risk-sol">ออก Economy Wellness Package + เพิ่มสัดส่วน B2B ที่มีสัญญาระยะยาว</div>
+      </div>
+      <div class="risk-card">
+        <div class="risk-head"><div class="risk-title">วัตถุดิบราคาสูงขึ้น</div><span class="rlevel rl-lo">ต่ำ</span></div>
+        <div class="risk-sol">ทำสัญญาซื้อระยะยาว + Supplier สำรอง 2-3 ราย</div>
+      </div>
+      <div class="risk-card">
+        <div class="risk-head"><div class="risk-title">กฎหมายสุขภาพ/อาหารเปลี่ยนแปลง</div><span class="rlevel rl-lo">ต่ำ</span></div>
+        <div class="risk-sol">ติดตามกฎหมายอย่างใกล้ชิด + ปรึกษาที่ปรึกษากฎหมายรายปี</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     9. INVESTMENT CTA
+══════════════════════════════════════ -->
+<section class="section" id="invest">
+  <div class="section-inner">
+    <div class="sec-eyebrow">09 · Investment Opportunity</div>
+    <h2 class="sec-title">ข้อเสนอการลงทุน</h2>
+    <div class="s-divider"></div>
+
+    <div class="g-asymm2 fade-up">
+      <div class="invest-right">
+        <div class="inv-bignum">3.5M ฿</div>
+        <div class="inv-bignote">เงินลงทุนที่ต้องการ</div>
+
+        <div class="structure-section">
+          <div class="struct-title">โครงสร้างเงินทุน</div>
+          <div class="struct-bar"><div class="struct-fill"><div class="sf-eq"></div><div class="sf-loan"></div><div class="sf-wc"></div></div></div>
+          <div class="struct-legend">
+            <div class="sl-item"><div class="sl-dot" style="background:var(--sage2)"></div>ทุนเจ้าของ 52% (1.83M)</div>
+            <div class="sl-item"><div class="sl-dot" style="background:var(--gold2)"></div>เงินกู้ระยะยาว 35% (1.235M)</div>
+            <div class="sl-item"><div class="sl-dot" style="background:var(--sage)"></div>Working Capital 13% (0.435M)</div>
+          </div>
+        </div>
+
+        <div class="inv-returns">
+          <div class="ir-cell"><div class="ir-val">~32%</div><div class="ir-lbl">IRR</div></div>
+          <div class="ir-cell"><div class="ir-val">~3 ปี</div><div class="ir-lbl">Payback</div></div>
+          <div class="ir-cell"><div class="ir-val">เดือน 11</div><div class="ir-lbl">Break-even</div></div>
+          <div class="ir-cell"><div class="ir-val">209%</div><div class="ir-lbl">ROE ปีที่ 5</div></div>
+        </div>
+
+        <div class="inv-contact">
+          📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7e091b1212101b0d0d501d1f181b3e19131f1712501d1113">[email&#160;protected]</a><br>
+          🏙 กรุงเทพมหานคร · ใกล้ BTS &amp; สวนสาธารณะ<br>
+          กลุ่ม: พูดแล้วไม่ทำ+ · ปีการศึกษา 2568
+        </div>
+      </div>
+
+      <div class="invest-left">
+        <p class="sec-lead" style="margin-bottom:32px">Wellness Cafe พร้อมที่จะเป็น Urban Wellness Sanctuary ที่สร้างคุณค่าทั้งทางเศรษฐกิจและคุณภาพชีวิต ด้วยโมเดลที่วิเคราะห์รอบคอบ ตลาดที่มีความต้องการจริง และทีมงานที่มุ่งมั่น</p>
+
+        <div class="invest-point"><div class="ipoint-icon">🌱</div><div class="invest-text"><div class="ipoint-lbl">ตลาด Wellness โลก</div><div class="ipoint-val">$7.9 ล้านล้าน ภายในปี 2026</div></div></div>
+        <div class="invest-point"><div class="ipoint-icon">📊</div><div class="invest-text"><div class="ipoint-lbl">Business Model</div><div class="ipoint-val">3 ช่องทางรายได้ ลดความเสี่ยง</div></div></div>
+        <div class="invest-point"><div class="ipoint-icon">📍</div><div class="invest-text"><div class="ipoint-lbl">ทำเลกลยุทธ์</div><div class="ipoint-val">ใกล้ BTS + สวนสาธารณะ เข้าถึงง่าย</div></div></div>
+        <div class="invest-point"><div class="ipoint-icon">🏢</div><div class="invest-text"><div class="ipoint-lbl">B2B Corporate Wellness</div><div class="ipoint-val">รายได้ประจำที่มั่นคง เติบโตต่อเนื่อง</div></div></div>
+        <div class="invest-point"><div class="ipoint-icon">🎓</div><div class="invest-text"><div class="ipoint-lbl">ผู้เชี่ยวชาญ Wellness</div><div class="ipoint-val">ใบรับรองมาตรฐานสากล สร้างความน่าเชื่อถือ</div></div></div>
+        <div class="invest-point"><div class="ipoint-icon">🚀</div><div class="invest-text"><div class="ipoint-lbl">ศักยภาพการขยาย</div><div class="ipoint-val">สาขาที่ 2 ในระยะยาว หลังพิสูจน์โมเดล</div></div></div>
+
+        <div style="margin-top:24px;padding:14px 16px;background:rgba(184,130,15,.07);border:1px solid rgba(184,130,15,.2);border-radius:8px;font-size:.76rem;color:var(--text2);line-height:1.75">
+          <strong style="color:var(--gold2)">⚠️ ขอบเขตของประมาณการทางการเงิน</strong><br>
+          ตัวเลขทั้งหมดในแผนนี้ (รายได้ · กำไร · Margin · ROE) คำนวณสำหรับ <strong>1 สาขาต่อเนื่อง 5 ปี</strong> เท่านั้น การขยายสาขาที่ 2 เป็นเป้าหมายระยะยาว ขึ้นอยู่กับผลจริงในปีที่ 3 และจะมีแผนการเงินแยกต่างหาก
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div><strong>Wellness Cafe &amp; Wellness Activity</strong> — "Your Urban Wellness Sanctuary"</div>
+  <div>Business Plan · ปีการศึกษา 2568 · กลุ่ม พูดแล้วไม่ทำ+ · <em style="color:var(--sage)">Confidential</em></div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── Scroll reveal ──
+const fadeEls = document.querySelectorAll('.fade-up');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      // Animate revenue bars
+      e.target.querySelectorAll('.rbar-fill[data-w]').forEach(b => {
+        b.style.width = b.dataset.w + '%';
+      });
+    }
+  });
+}, { threshold: 0.1 });
+fadeEls.forEach(el => io.observe(el));
+
+// Fallback: ensure all elements become visible even if observer doesn't fire
+setTimeout(() => {
+  fadeEls.forEach(el => {
+    el.classList.add('visible');
+    el.querySelectorAll('.rbar-fill[data-w]').forEach(b => {
+      b.style.width = b.dataset.w + '%';
+    });
+  });
+}, 300);
+
+// ── Sidebar active dot ──
+const secs = document.querySelectorAll('section[id]');
+const dots = document.querySelectorAll('.snav-dot');
+const secObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+       const activeDot = document.querySelector(`.snav-dot[data-sec="${e.target.id}"]`);
+      if (activeDot) {
+        dots.forEach(d => d.classList.remove('active'));
+        activeDot.classList.add('active');
+      }
+    }
+  });
+}, { threshold: 0.3 });
+secs.forEach(s => secObs.observe(s));
+</script>
+
+</body>
+</html>
